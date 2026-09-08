@@ -1,0 +1,1304 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#070b14" />
+    <meta
+      name="description"
+      content="Prateek Jangir - Web Developer Portfolio"
+    />
+
+    <title>Prateek Jangir | Web Developer</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+
+    <meta property="og:title" content="Prateek Jangir | Full-Stack Developer" />
+
+    <meta
+      property="og:description"
+      content="Full-Stack Developer building secure and practical web applications."
+    />
+
+    <meta
+      property="og:image"
+      content="https://your-domain.com/images/Prateek.png"
+    />
+
+    <meta property="og:type" content="website" />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              display: ["Manrope", "sans-serif"],
+            },
+            colors: {
+              ink: "#070b14",
+              panel: "#0d1320",
+              panel2: "#111827",
+              line: "rgba(255,255,255,.09)",
+              accent: "#60a5fa",
+              violet: "#a78bfa",
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body class="antialiased">
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+    <header id="navbar" class="nav fixed top-0 left-0 right-0 z-50">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8">
+        <div class="h-[76px] flex items-center justify-between">
+          <a
+            href="#home"
+            class="font-display font-extrabold text-xl sm:text-2xl tracking-tight"
+          >
+            Prateek<span class="gradient-text">.</span>
+          </a>
+
+          <!-- Desktop Navigation -->
+          <nav class="hidden md:flex items-center gap-8">
+            <a class="nav-link text-sm font-semibold active" href="#home">
+              Home
+            </a>
+
+            <a class="nav-link text-sm font-semibold" href="#about"> About </a>
+
+            <a class="nav-link text-sm font-semibold" href="#projects">
+              Projects
+            </a>
+
+            <a class="nav-link text-sm font-semibold" href="#certificates">
+              Certificates
+            </a>
+
+            <a class="nav-link text-sm font-semibold" href="#contact">
+              Contact
+            </a>
+
+            <a
+              href="https://drive.google.com/file/d/1Jy4Hr6mPGR78j3EK8cnRsnc0oopvw-yQ/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-primary !py-2.5 !px-5 !rounded-xl text-sm"
+            >
+              Resume
+              <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+            </a>
+          </nav>
+
+          <!-- Mobile Menu Button -->
+          <button
+            id="mobile-menu-btn"
+            aria-label="Open menu"
+            aria-expanded="false"
+            class="md:hidden hamburger w-11 h-11 grid place-items-center"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu md:hidden">
+          <div class="grid gap-1">
+            <a
+              class="mobile-link rounded-xl px-4 py-3.5 text-slate-300 hover:text-white hover:bg-white/5"
+              href="#home"
+            >
+              Home
+            </a>
+
+            <a
+              class="mobile-link rounded-xl px-4 py-3.5 text-slate-300 hover:text-white hover:bg-white/5"
+              href="#about"
+            >
+              About
+            </a>
+
+            <a
+              class="mobile-link rounded-xl px-4 py-3.5 text-slate-300 hover:text-white hover:bg-white/5"
+              href="#projects"
+            >
+              Projects
+            </a>
+
+            <a
+              class="mobile-link rounded-xl px-4 py-3.5 text-slate-300 hover:text-white hover:bg-white/5"
+              href="#certificates"
+            >
+              Certificates
+            </a>
+
+            <a
+              class="mobile-link rounded-xl px-4 py-3.5 text-slate-300 hover:text-white hover:bg-white/5"
+              href="#contact"
+            >
+              Contact
+            </a>
+
+            <a
+              class="btn-primary mt-2"
+              href="https://drive.google.com/file/d/1Jy4Hr6mPGR78j3EK8cnRsnc0oopvw-yQ/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Download Resume
+              <i class="fa-solid fa-download"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section
+        id="home"
+        class="hero-grid min-h-screen relative flex items-center overflow-hidden pt-24"
+      >
+        <div class="hero-orb orb-blue"></div>
+        <div class="hero-orb orb-violet"></div>
+
+        <div class="max-w-7xl mx-auto w-full px-5 sm:px-8 py-16 lg:py-20">
+          <div
+            class="grid lg:grid-cols-[1.08fr_.92fr] gap-14 lg:gap-8 items-center"
+          >
+            <!-- Hero Text -->
+            <div class="reveal">
+              <p class="section-kicker mb-4">Full-Stack Developer</p>
+
+              <h1
+                class="font-display text-5xl sm:text-6xl lg:text-[78px] leading-[.95] font-extrabold tracking-tight"
+              >
+                Prateek Jangir
+              </h1>
+
+              <p
+                class="mt-7 max-w-2xl text-base sm:text-lg leading-8 text-slate-400"
+              >
+                I’m a full-stack developer who enjoys building modern web
+                applications, designing intuitive interfaces, and creating
+                reliable backend systems that solve real-world problems.
+              </p>
+
+              <div class="flex flex-wrap gap-3 mt-8">
+                <a href="#projects" class="btn-primary">
+                  Explore Projects
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+                <a href="#contact" class="btn-secondary">
+                  Let's Connect
+                  <i class="fa-regular fa-paper-plane"></i>
+                </a>
+              </div>
+
+              <div class="mt-9 pt-6 border-t border-white/10 max-w-2xl">
+                <div class="hero-tech-stack flex flex-wrap gap-2.5">
+                  <span class="tech-tag">C++</span>
+                  <span class="tech-tag">Java</span>
+                  <span class="tech-tag">Python</span>
+
+                  <span class="tech-tag">React.js</span>
+                  <span class="tech-tag">Node.js</span>
+                  <span class="tech-tag">MongoDB</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Hero Image -->
+            <div class="reveal flex justify-center lg:justify-end">
+              <div class="relative">
+                <div class="avatar-wrap">
+                  <div class="avatar-inner">
+                    <img
+                      src="images/Prateek.png"
+                      onerror="
+                        this.src =
+                          'https://placehold.co/700x700/111827/ffffff?text=PJ'
+                      "
+                      alt="Prateek Jangir"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a href="#about" class="scroll-cue hidden sm:flex">
+          Scroll to explore
+          <i class="fa-solid fa-chevron-down"></i>
+        </a>
+      </section>
+
+      <!-- =========================
+             ABOUT
+        ========================== -->
+      <section id="about" class="py-24 lg:py-32 relative">
+        <div class="max-w-7xl mx-auto px-5 sm:px-8">
+          <div class="text-center reveal">
+            <p class="section-kicker">About me</p>
+
+            <h2
+              class="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold mt-2"
+            >
+              A developer who enjoys
+              <span class="gradient-text"> building </span>
+            </h2>
+
+            <div class="section-line"></div>
+          </div>
+
+          <div class="grid lg:grid-cols-[1.05fr_.95fr] gap-7 mt-14">
+            <!-- Profile -->
+            <article class="card p-7 sm:p-9 reveal">
+              <!-- Get to know me -->
+              <div class="flex items-center gap-3 mb-7">
+                <div class="contact-icon">
+                  <i class="fa-regular fa-user"></i>
+                </div>
+
+                <div>
+                  <div
+                    class="text-xs uppercase tracking-[.15em] text-slate-500 font-bold"
+                  >
+                    Profile
+                  </div>
+
+                  <h3 class="font-display text-xl font-extrabold">
+                    Get to know me
+                  </h3>
+                </div>
+              </div>
+
+              <!-- About Text -->
+              <div class="space-y-5 text-slate-400 leading-7">
+                <p>
+                  My name is
+                  <strong class="text-white">Prateek Jangir</strong>, and I am a
+                  passionate Full-Stack Developer. I love building creative,
+                  user-friendly websites and applications that solve real-world
+                  problems.
+                </p>
+
+                <p>
+                  I am constantly improving my problem-solving skills and
+                  exploring new technologies to grow as a developer. I enjoy
+                  architecting robust backends as much as designing intuitive
+                  frontends.
+                </p>
+              </div>
+
+              <!-- Beyond the Code -->
+              <div class="mt-8 pt-6 border-t border-white/10 beyond-code">
+                <p
+                  class="text-xs uppercase tracking-[.15em] font-bold text-slate-500 mb-3"
+                >
+                  Beyond the Code
+                </p>
+
+                <div class="grid sm:grid-cols-2 gap-3 beyond-code-grid">
+                  <!-- Chess -->
+                  <div
+                    class="rounded-xl border border-white/7 bg-white/[.025] px-4 py-3 text-sm text-slate-300"
+                  >
+                    <i class="fa-solid fa-chess-knight text-blue-400 mr-2"></i>
+                    Chess & Strategy
+                  </div>
+
+                  <!-- Projects -->
+                  <div
+                    class="rounded-xl border border-white/7 bg-white/[.025] px-4 py-3 text-sm text-slate-300"
+                  >
+                    <i class="fa-solid fa-code text-violet-400 mr-2"></i>
+                    Building Projects
+                  </div>
+
+                  <!-- Photography -->
+                  <div
+                    class="rounded-xl border border-white/7 bg-white/[.025] px-4 py-3 text-sm text-slate-300"
+                  >
+                    <i class="fa-solid fa-camera text-emerald-400 mr-2"></i>
+                    Photography
+                  </div>
+
+                  <!-- Music -->
+                  <div
+                    class="rounded-xl border border-white/7 bg-white/[.025] px-4 py-3 text-sm text-slate-300"
+                  >
+                    <i class="fa-solid fa-music text-amber-300 mr-2"></i>
+                    Music & Creativity
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Skills -->
+            <article class="card p-7 sm:p-9 reveal profile-card">
+              <div class="flex items-center gap-3 mb-7">
+                <div class="contact-icon">
+                  <i class="fa-solid fa-layer-group"></i>
+                </div>
+
+                <div>
+                  <h3 class="font-display text-xl font-extrabold">
+                    Skills & technologies
+                  </h3>
+                </div>
+              </div>
+
+              <div class="space-y-6">
+                <!-- Languages -->
+                <div>
+                  <div
+                    class="text-xs uppercase tracking-[.15em] text-blue-300 font-bold mb-3"
+                  >
+                    Languages
+                  </div>
+
+                  <div class="flex flex-wrap gap-2">
+                    <span class="skill-box">C</span>
+                    <span class="skill-box">C++</span>
+                    <span class="skill-box">Java</span>
+                    <span class="skill-box">Python</span>
+                  </div>
+                </div>
+
+                <!-- Frontend -->
+                <div>
+                  <div
+                    class="text-xs uppercase tracking-[.15em] text-blue-300 font-bold mb-3"
+                  >
+                    Frontend
+                  </div>
+
+                  <div class="flex flex-wrap gap-2">
+                    <span class="skill-box">HTML</span>
+                    <span class="skill-box">CSS</span>
+                    <span class="skill-box">JavaScript</span>
+                    <span class="skill-box">React.js</span>
+                    <span class="skill-box">Next.js</span>
+                  </div>
+                </div>
+
+                <!-- Backend -->
+                <div>
+                  <div
+                    class="text-xs uppercase tracking-[.15em] text-blue-300 font-bold mb-3"
+                  >
+                    Backend
+                  </div>
+
+                  <div class="flex flex-wrap gap-2">
+                    <span class="skill-box">Node.js</span>
+                    <span class="skill-box">Express.js</span>
+                    <span class="skill-box">FastAPI</span>
+                    <span class="skill-box">REST APIs</span>
+                  </div>
+                </div>
+
+                <!-- Database -->
+                <div>
+                  <div
+                    class="text-xs uppercase tracking-[.15em] text-blue-300 font-bold mb-3"
+                  >
+                    Database
+                  </div>
+
+                  <div class="flex flex-wrap gap-2">
+                    <span class="skill-box">MongoDB</span>
+                    <span class="skill-box">PostgreSQL</span>
+                    <span class="skill-box">SQL</span>
+                  </div>
+                </div>
+
+                <!-- Tools & Cloud -->
+                <div>
+                  <div
+                    class="text-xs uppercase tracking-[.15em] text-blue-300 font-bold mb-3"
+                  >
+                    Tools & Cloud
+                  </div>
+
+                  <div class="flex flex-wrap gap-2">
+                    <span class="skill-box">Git</span>
+                    <span class="skill-box">Linux</span>
+                    <span class="skill-box">Vercel</span>
+                    <span class="skill-box">Render</span>
+                    <span class="skill-box">Cloudinary</span>
+                    <span class="skill-box">Firebase</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================
+             PROJECTS
+        ========================== -->
+      <section
+        id="projects"
+        class="py-24 lg:py-32 bg-white/[.018] border-y border-white/[.04]"
+      >
+        <div class="max-w-7xl mx-auto px-5 sm:px-8">
+          <div class="text-center reveal">
+            <p class="section-kicker">Selected work</p>
+
+            <h2
+              class="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold mt-2"
+            >
+              Projects I’ve
+              <span class="gradient-text"> built </span>
+            </h2>
+
+            <div class="section-line"></div>
+          </div>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-14">
+            <!-- Project 1 -->
+            <article
+              class="card project-card reveal group"
+              data-project="campusconnect"
+              tabindex="0"
+              role="button"
+              aria-label="View CampusConnect case study"
+            >
+              <div class="project-image">
+                <img src="/images/campusconnect.png" alt="CampusConnect" />
+
+                <div class="project-number">01</div>
+              </div>
+
+              <div class="p-6 sm:p-7 flex-1 flex flex-col">
+                <div
+                  class="text-xs uppercase tracking-[.15em] text-violet-400 font-bold"
+                >
+                  Full Stack Web App
+                </div>
+
+                <h3 class="font-display text-xl font-extrabold mt-2">
+                  CampusConnect
+                </h3>
+
+                <p class="text-slate-400 text-sm leading-6 mt-3 flex-1">
+                  A full-stack campus community platform that allows students to
+                  share posts, report lost & found items, and interact with
+                  other students through a secure authenticated system.
+                </p>
+
+                <div class="flex flex-wrap gap-2 mt-5">
+                  <span class="tech-tag">React.js</span>
+
+                  <span class="tech-tag">JavaScript</span>
+
+                  <span class="tech-tag">Python</span>
+
+                  <span class="tech-tag">MongoDB</span>
+
+                  <span class="tech-tag">Google OAuth</span>
+
+                  <span class="tech-tag">JWT</span>
+
+                  <span class="tech-tag">FastAPI</span>
+                </div>
+
+                <div class="grid grid-cols-2 gap-3 mt-6">
+                  <a
+                    href="https://github.com/prateek4576/campusconnect"
+                    class="btn-secondary !py-2.5 text-sm"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i class="fab fa-github"></i>
+                    GitHub
+                  </a>
+
+                  <a
+                    href="https://campusconnect-prateek57.vercel.app/"
+                    class="btn-primary !py-2.5 text-sm"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    Live Demo
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project 2 -->
+            <article
+              class="card project-card reveal group"
+              data-project="caat"
+              tabindex="0"
+              role="button"
+              aria-label="View CAAT case study"
+            >
+              <div class="project-image">
+                <img
+                  src="/images/CAAT.png"
+                  alt="CAAT - Child Aptitude Assessment Test"
+                />
+
+                <div class="project-number">02</div>
+              </div>
+
+              <div class="p-6 sm:p-7 flex-1 flex flex-col">
+                <div
+                  class="text-xs uppercase tracking-[.15em] text-violet-400 font-bold"
+                >
+                  Assessment Platform
+                </div>
+
+                <h3 class="font-display text-xl font-extrabold mt-2">
+                  CAAT – Child Aptitude Assessment Test
+                </h3>
+
+                <p class="text-slate-400 text-sm leading-6 mt-3 flex-1">
+                  An interactive aptitude assessment platform for students
+                  featuring Maths, Science, and Aptitude quizzes with instant
+                  results, performance tracking, and attempt history.
+                </p>
+
+                <div class="flex flex-wrap gap-2 mt-5">
+                  <span class="tech-tag">HTML</span>
+
+                  <span class="tech-tag">CSS</span>
+
+                  <span class="tech-tag">JavaScript</span>
+
+                  <span class="tech-tag">Node.js</span>
+
+                  <span class="tech-tag">Express.js</span>
+
+                  <span class="tech-tag">MongoDB</span>
+
+                  <span class="tech-tag">bcrypt</span>
+
+                  <span class="tech-tag">Nodemailer</span>
+                </div>
+
+                <div class="grid grid-cols-2 gap-3 mt-6">
+                  <a
+                    href="https://github.com/prateek4576/project"
+                    class="btn-secondary !py-2.5 text-sm"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i class="fab fa-github"></i>
+                    GitHub
+                  </a>
+
+                  <a
+                    href="https://caat-pfiy.onrender.com/"
+                    class="btn-primary !py-2.5 text-sm"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    Live Demo
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project 3 -->
+            <article
+              class="card project-card reveal group"
+              data-project="taskflow"
+              tabindex="0"
+              role="button"
+              aria-label="View TaskFlow case study"
+            >
+              <div class="project-image">
+                <img
+                  src="/images/todo.png"
+                  alt="Secure To-Do Web Application"
+                />
+
+                <div class="project-number">03</div>
+              </div>
+
+              <div class="p-6 sm:p-7 flex-1 flex flex-col">
+                <div
+                  class="text-xs uppercase tracking-[.15em] text-violet-400 font-bold"
+                >
+                  Productivity Web App
+                </div>
+
+                <h3 class="font-display text-xl font-extrabold mt-2">
+                  TaskFlow
+                </h3>
+
+                <p class="text-slate-400 text-sm leading-6 mt-3 flex-1">
+                  A secure task management application featuring Google OAuth
+                  2.0, session-based authentication, password hashing, and
+                  persistent user sessions with PostgreSQL.
+                </p>
+
+                <div class="flex flex-wrap gap-2 mt-5">
+                  <span class="tech-tag">HTML</span>
+
+                  <span class="tech-tag">CSS</span>
+
+                  <span class="tech-tag">JavaScript</span>
+
+                  <span class="tech-tag">Node.js</span>
+
+                  <span class="tech-tag">Express.js</span>
+
+                  <span class="tech-tag">PostgreSQL</span>
+
+                  <span class="tech-tag">OAuth 2.0</span>
+                </div>
+
+                <div class="grid grid-cols-2 gap-3 mt-6">
+                  <a
+                    href="https://github.com/prateek4576/mytodoapp"
+                    class="btn-secondary !py-2.5 text-sm"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i class="fab fa-github"></i>
+                    GitHub
+                  </a>
+
+                  <a
+                    href="https://mytodoapp-deth.onrender.com"
+                    class="btn-primary !py-2.5 text-sm"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    Live Demo
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================
+             CERTIFICATES
+        ========================== -->
+      <section id="certificates" class="py-24 lg:py-32">
+        <div class="max-w-7xl mx-auto px-5 sm:px-8">
+          <div class="text-center reveal">
+            <p class="section-kicker">Credentials</p>
+
+            <h2
+              class="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold mt-2"
+            >
+              Certificates &
+              <span class="gradient-text"> achievements </span>
+            </h2>
+
+            <div class="section-line"></div>
+          </div>
+
+          <div
+            class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 mt-14"
+          >
+            <!-- C++ -->
+            <button
+              class="cert-card aspect-square reveal group text-left"
+              data-certificate="images/C++ Infosys.jpg"
+              data-fallback="https://placehold.co/700x700/111827/a78bfa?text=C%2B%2B"
+            >
+              <img
+                src="images/C++ Infosys.jpg"
+                onerror="
+                  this.src =
+                    'https://placehold.co/700x700/111827/a78bfa?text=C%2B%2B'
+                "
+                alt="C++ Certificate"
+                class="w-full h-full object-cover"
+              />
+
+              <div class="cert-overlay">
+                <div class="font-semibold text-sm mt-1">C++</div>
+              </div>
+            </button>
+
+            <!-- Java -->
+            <button
+              class="cert-card aspect-square reveal group text-left"
+              data-certificate="images/java.png"
+              data-fallback="https://placehold.co/700x700/111827/ef4444?text=Java"
+            >
+              <img
+                src="/images/JAVA.png"
+                onerror="
+                  this.src =
+                    'https://placehold.co/700x700/111827/ef4444?text=Java'
+                "
+                alt="Java Certificate"
+                class="w-full h-full object-cover"
+              />
+
+              <div class="cert-overlay">
+                <div class="font-semibold text-sm mt-1">Java</div>
+              </div>
+            </button>
+
+            <!-- DSA -->
+            <button
+              class="cert-card aspect-square reveal group text-left"
+              data-certificate="/images/DSA.jpg"
+              data-fallback="https://placehold.co/700x700/111827/c084fc?text=DSA"
+            >
+              <img
+                src="/images/DSA.jpg"
+                onerror="
+                  this.src =
+                    'https://placehold.co/700x700/111827/c084fc?text=DSA'
+                "
+                alt="Data Structures and Algorithms Certificate"
+                class="w-full h-full object-cover"
+              />
+
+              <div class="cert-overlay">
+                <div class="font-semibold text-sm mt-1">DSA</div>
+              </div>
+            </button>
+
+            <!-- DBMS -->
+            <button
+              class="cert-card aspect-square reveal group text-left"
+              data-certificate="/images/DBMS.jpg"
+              data-fallback="https://placehold.co/700x700/111827/38bdf8?text=DBMS"
+            >
+              <img
+                src="/images/DBMS.jpg"
+                onerror="
+                  this.src =
+                    'https://placehold.co/700x700/111827/38bdf8?text=DBMS'
+                "
+                alt="Database Management Systems Certificate"
+                class="w-full h-full object-cover"
+              />
+
+              <div class="cert-overlay">
+                <div class="font-semibold text-sm mt-1">DBMS</div>
+              </div>
+            </button>
+
+            <!-- ReactJS -->
+            <button
+              class="cert-card aspect-square reveal group text-left"
+              data-certificate="images/reactjs.png"
+              data-fallback="https://placehold.co/700x700/111827/60a5fa?text=ReactJS"
+            >
+              <img
+                src="images/reactjs.png"
+                onerror="
+                  this.src =
+                    'https://placehold.co/700x700/111827/60a5fa?text=ReactJS'
+                "
+                alt="ReactJS Certificate"
+                class="w-full h-full object-cover"
+              />
+
+              <div class="cert-overlay">
+                <div class="font-semibold text-sm mt-1">ReactJS</div>
+              </div>
+            </button>
+
+            <!-- Web Development -->
+            <button
+              class="cert-card aspect-square reveal group text-left"
+              data-certificate="images/Web.png"
+              data-fallback="https://placehold.co/700x700/111827/34d399?text=Web+Development"
+            >
+              <img
+                src="images/Web.png"
+                onerror="
+                  this.src =
+                    'https://placehold.co/700x700/111827/34d399?text=Web+Development'
+                "
+                alt="Web Development Certificate"
+                class="w-full h-full object-cover"
+              />
+
+              <div class="cert-overlay">
+                <div class="font-semibold text-sm mt-1">Web Development</div>
+              </div>
+            </button>
+
+            <!-- Linux -->
+            <button
+              class="cert-card aspect-square reveal group text-left"
+              data-certificate="images/Linux.png"
+              data-fallback="https://placehold.co/700x700/111827/f59e0b?text=Linux"
+            >
+              <img
+                src="images/Linux.png"
+                onerror="
+                  this.src =
+                    'https://placehold.co/700x700/111827/f59e0b?text=Linux'
+                "
+                alt="Linux Certificate"
+                class="w-full h-full object-cover"
+              />
+
+              <div class="cert-overlay">
+                <div class="font-semibold text-sm mt-1">Linux</div>
+              </div>
+            </button>
+
+            <!-- CSS -->
+            <button
+              class="cert-card aspect-square reveal group text-left"
+              data-certificate="images/css.jpg"
+              data-fallback="https://placehold.co/700x700/111827/60a5fa?text=CSS"
+            >
+              <img
+                src="images/css.jpg"
+                onerror="
+                  this.src =
+                    'https://placehold.co/700x700/111827/60a5fa?text=CSS'
+                "
+                alt="CSS Certificate"
+                class="w-full h-full object-cover"
+              />
+
+              <div class="cert-overlay">
+                <div class="font-semibold text-sm mt-1">CSS</div>
+              </div>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================
+             CONTACT
+        ========================== -->
+      <section
+        id="contact"
+        class="py-24 lg:py-32 bg-white/[.018] border-y border-white/[.04]"
+      >
+        <div class="max-w-6xl mx-auto px-5 sm:px-8">
+          <div class="text-center reveal">
+            <p class="section-kicker">Let's talk</p>
+
+            <h2
+              class="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold mt-2"
+            >
+              Let's
+              <span class="gradient-text"> Connect & Create. </span>
+            </h2>
+
+            <div class="section-line"></div>
+          </div>
+
+          <div class="grid lg:grid-cols-[.72fr_1.28fr] gap-7 mt-14">
+            <!-- Contact Details -->
+            <aside class="card p-7 sm:p-8 reveal">
+              <h3 class="font-display text-2xl font-extrabold mt-2">
+                Let’s connect
+              </h3>
+
+              <p class="text-slate-400 leading-7 mt-4">
+                I'm interested in web development opportunities, interesting
+                projects, and conversations around technology.
+              </p>
+
+              <div class="space-y-4 mt-8">
+                <a
+                  href="mailto:prateekjangir4576@gmail.com"
+                  class="flex items-center gap-4 group"
+                >
+                  <div class="contact-icon">
+                    <i class="fa-regular fa-envelope"></i>
+                  </div>
+
+                  <div>
+                    <div class="text-xs text-slate-500">Email</div>
+
+                    <div
+                      class="text-sm font-semibold text-slate-200 group-hover:text-blue-300 transition-colors"
+                    >
+                      prateekjangir4576@gmail.com
+                    </div>
+                  </div>
+                </a>
+
+                <a
+                  href="https://github.com/prateek4576"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex items-center gap-4 group"
+                >
+                  <div class="contact-icon">
+                    <i class="fab fa-github"></i>
+                  </div>
+
+                  <div>
+                    <div class="text-xs text-slate-500">GitHub</div>
+
+                    <div
+                      class="text-sm font-semibold text-slate-200 group-hover:text-blue-300 transition-colors"
+                    >
+                      github.com/prateek4576
+                    </div>
+                  </div>
+                </a>
+
+                <a
+                  href="https://www.linkedin.com/in/prateek-jangir-software-developer/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex items-center gap-4 group"
+                >
+                  <div class="contact-icon">
+                    <i class="fab fa-linkedin-in"></i>
+                  </div>
+
+                  <div>
+                    <div class="text-xs text-slate-500">LinkedIn</div>
+
+                    <div
+                      class="text-sm font-semibold text-slate-200 group-hover:text-blue-300 transition-colors"
+                    >
+                      Prateek Jangir
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <div class="mt-9 pt-6 border-t border-white/10">
+                <div class="flex items-center gap-2 text-sm text-slate-400">
+                  <span class="status-dot"></span>
+                  Available for opportunities
+                </div>
+              </div>
+            </aside>
+
+            <!-- Contact Form -->
+            <div class="card p-7 sm:p-9 reveal">
+              <form
+                action="https://formspree.io/f/manbvbqr"
+                method="POST"
+                class="space-y-5"
+              >
+                <div class="grid sm:grid-cols-2 gap-5">
+                  <div>
+                    <label
+                      for="name"
+                      class="block text-sm font-semibold text-slate-300 mb-2"
+                    >
+                      Your name
+                    </label>
+
+                    <input
+                      class="field"
+                      type="text"
+                      id="name"
+                      name="name"
+                      required
+                      placeholder="Abc"
+                    />
+                  </div>
+
+                  <div>
+                    <label
+                      for="email"
+                      class="block text-sm font-semibold text-slate-300 mb-2"
+                    >
+                      Your email
+                    </label>
+
+                    <input
+                      class="field"
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      placeholder="abc@example.com"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label
+                    for="message"
+                    class="block text-sm font-semibold text-slate-300 mb-2"
+                  >
+                    Message
+                  </label>
+
+                  <textarea
+                    class="field resize-y min-h-44"
+                    id="message"
+                    name="message"
+                    required
+                    placeholder="Write your message here..."
+                  ></textarea>
+                </div>
+
+                <button type="submit" class="btn-primary w-full !py-3.5">
+                  Send Message
+                  <i class="fa-solid fa-paper-plane"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================
+     PORTFOLIO CTA
+========================= -->
+      <section class="py-16">
+        <div class="max-w-4xl mx-auto px-5 sm:px-8">
+          <div class="card p-8 sm:p-10 text-center reveal">
+            <p
+              class="text-slate-400 text-sm sm:text-base leading-7 max-w-2xl mx-auto"
+            >
+              Interested in my work? Explore my projects or download my resume
+              to learn more about my technical background.
+            </p>
+
+            <a
+              href="https://drive.google.com/file/d/1Jy4Hr6mPGR78j3EK8cnRsnc0oopvw-yQ/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-primary mt-6"
+            >
+              Download Resume
+              <i class="fa-solid fa-download"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+    <footer class="py-10">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8">
+        <div
+          class="flex flex-col md:flex-row items-center justify-between gap-5"
+        >
+          <div>
+            <a href="#home" class="font-display font-extrabold text-xl">
+              Prateek<span class="gradient-text">.</span>
+            </a>
+
+            <p class="text-xs text-slate-500 mt-1">
+              Full-Stack Developer · Problem Solver
+            </p>
+          </div>
+
+          <!-- Social Links -->
+          <div class="flex items-center gap-2">
+            <a
+              href="https://github.com/prateek4576"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              class="contact-icon hover:text-white hover:bg-white/5 transition"
+            >
+              <i class="fab fa-github"></i>
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/prateek-jangir-software-developer/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              class="contact-icon hover:text-white hover:bg-white/5 transition"
+            >
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+
+            <a
+              href="https://www.instagram.com/prateekjangir.57?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw=="
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              class="contact-icon hover:text-white hover:bg-white/5 transition"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+
+            <a
+              href="mailto:prateekjangir4576@gmail.com"
+              aria-label="Email"
+              class="contact-icon hover:text-white hover:bg-white/5 transition"
+            >
+              <i class="fa-regular fa-envelope"></i>
+            </a>
+          </div>
+
+          <p class="text-xs text-slate-500">
+            ©
+            <span id="year"></span>
+            Prateek Jangir. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- =========================
+         CERTIFICATE MODAL
+    ========================== -->
+    <div id="imageModal" class="modal" aria-hidden="true">
+      <div
+        class="modal-shell"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Certificate preview"
+      >
+        <button
+          id="modalClose"
+          class="modal-close"
+          aria-label="Close certificate preview"
+        >
+          &times;
+        </button>
+
+        <img id="modalImage" alt="Certificate full view" />
+      </div>
+    </div>
+
+    <!-- =========================
+     PROJECT DETAILS MODAL
+========================== -->
+    <div id="projectModal" class="project-modal" aria-hidden="true">
+      <div
+        class="project-modal-shell"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="projectModalTitle"
+      >
+        <!-- Close Button -->
+        <button
+          id="projectModalClose"
+          class="project-modal-close"
+          aria-label="Close project details"
+        >
+          &times;
+        </button>
+
+        <!-- Header -->
+        <div class="project-modal-header">
+          <div>
+            <p id="projectModalCategory" class="section-kicker"></p>
+
+            <h2
+              id="projectModalTitle"
+              class="font-display text-3xl sm:text-4xl font-extrabold mt-2"
+            ></h2>
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div class="project-modal-content">
+          <!-- Overview -->
+          <div class="project-detail-block">
+            <h3>
+              <i class="fa-solid fa-circle-info"></i>
+              Overview
+            </h3>
+
+            <p id="projectModalOverview"></p>
+          </div>
+
+          <!-- Technology -->
+          <div class="project-detail-block">
+            <h3>
+              <i class="fa-solid fa-code"></i>
+              Technology
+            </h3>
+
+            <div id="projectModalTech" class="project-detail-tags"></div>
+          </div>
+
+          <!-- Authentication -->
+          <div class="project-detail-block">
+            <h3>
+              <i class="fa-solid fa-shield-halved"></i>
+              Authentication
+            </h3>
+
+            <p id="projectModalAuth"></p>
+          </div>
+
+          <!-- Screenshots -->
+          <div class="project-detail-block">
+            <h3>
+              <i class="fa-solid fa-images"></i>
+              Screenshots
+            </h3>
+
+            <div id="projectModalScreenshots" class="project-screenshots"></div>
+          </div>
+        </div>
+
+        <!-- Footer Buttons -->
+        <div class="project-modal-footer">
+          <a
+            id="projectModalGithub"
+            class="btn-secondary"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fab fa-github"></i>
+            GitHub
+          </a>
+
+          <a
+            id="projectModalLive"
+            class="btn-primary"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            Live Demo
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+  </body>
+</html>
