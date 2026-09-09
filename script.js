@@ -43,6 +43,8 @@ const menuBtn = document.getElementById("mobile-menu-btn");
 const mobileMenu = document.getElementById("mobile-menu");
 const mobileLinks = document.querySelectorAll(".mobile-link");
 
+
+
 function toggleMenu(force) {
   if (!mobileMenu || !menuBtn) {
     return;
@@ -63,6 +65,20 @@ if (menuBtn) {
 
 mobileLinks.forEach((link) => {
   link.addEventListener("click", () => toggleMenu(false));
+});
+
+document.addEventListener("click", (e) => {
+  if (!mobileMenu || !menuBtn) return;
+
+  const isMenuOpen = mobileMenu.classList.contains("open");
+
+  if (
+    isMenuOpen &&
+    !mobileMenu.contains(e.target) &&
+    !menuBtn.contains(e.target)
+  ) {
+    toggleMenu(false);
+  }
 });
 
 const revealItems = document.querySelectorAll(".reveal");
