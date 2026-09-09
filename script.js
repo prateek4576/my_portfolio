@@ -112,7 +112,8 @@ const projectModal = document.getElementById("projectModal");
 const projectModalClose = document.getElementById("projectModalClose");
 const projectCards = document.querySelectorAll(".project-card");
 
-let previousBodyOverflow = "";
+let projectModalPreviousBodyOverflow = "";
+let imageModalPreviousBodyOverflow = "";
 
 const projectData = {
   campusconnect: {
@@ -305,8 +306,8 @@ project.screenshots.forEach((src) => {
   projectModal.classList.add("show");
   projectModal.setAttribute("aria-hidden", "false");
 
-  previousBodyOverflow = document.body.style.overflow;
-  document.body.style.overflow = "hidden";
+projectModalPreviousBodyOverflow = document.body.style.overflow;
+document.body.style.overflow = "hidden";
 }
 
 function closeProjectModal() {
@@ -317,7 +318,7 @@ function closeProjectModal() {
   projectModal.classList.remove("show");
   projectModal.setAttribute("aria-hidden", "true");
 
-  document.body.style.overflow = previousBodyOverflow;
+  document.body.style.overflow = projectModalPreviousBodyOverflow;
 }
 
 const modal = document.getElementById("imageModal");
@@ -331,8 +332,8 @@ function openModal(src, fallback) {
 
   modal.classList.add("show");
   modal.setAttribute("aria-hidden", "false");
-  previousBodyOverflow = document.body.style.overflow;
-  document.body.style.overflow = "hidden";
+  imageModalPreviousBodyOverflow = document.body.style.overflow;
+document.body.style.overflow = "hidden";
 
   modalImage.onerror = function () {
     modalImage.onerror = null;
@@ -351,7 +352,7 @@ function closeModal() {
   modal.setAttribute("aria-hidden", "true");
   modalImage.src = "";
 
-  document.body.style.overflow = previousBodyOverflow;
+ document.body.style.overflow = imageModalPreviousBodyOverflow;
 }
 
 certificateCards.forEach((card) => {
