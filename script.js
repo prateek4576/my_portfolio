@@ -281,12 +281,24 @@ function openProjectModal(projectId) {
 
   projectModalScreenshots.innerHTML = "";
 
-  project.screenshots.forEach((src) => {
-    const img = document.createElement("img");
-    img.src = src;
-    img.alt = `${project.title} screenshot`;
-    projectModalScreenshots.appendChild(img);
+ projectModalScreenshots.innerHTML = "";
+
+project.screenshots.forEach((src) => {
+  const img = document.createElement("img");
+
+  img.src = src;
+  img.alt = `${project.title} screenshot`;
+  img.classList.add("project-screenshot-clickable");
+
+  img.addEventListener("click", () => {
+    openModal(
+      src,
+      "https://placehold.co/1200x675/f8fafc/0f172a?text=Screenshot+Unavailable"
+    );
   });
+
+  projectModalScreenshots.appendChild(img);
+});
 
   projectModalGithub.href = project.github;
   projectModalLive.href = project.live;
@@ -440,3 +452,75 @@ document.addEventListener("keydown", (event) => {
     closeProjectModal();
   }
 });
+
+
+// =========================
+// THEME TOGGLE
+// =========================
+
+const themeToggle = document.getElementById("theme-toggle");
+const themeIcon = document.getElementById("theme-icon");
+
+function setTheme(isLight) {
+  document.body.classList.toggle("light-mode", isLight);
+
+  if (themeIcon) {
+    themeIcon.className = isLight
+      ? "fa-solid fa-moon"
+      : "fa-solid fa-sun";
+  }
+
+  if (themeToggle) {
+    themeToggle.setAttribute(
+      "aria-label",
+      isLight ? "Switch to dark mode" : "Switch to light mode"
+    );
+
+    themeToggle.setAttribute("aria-pressed", String(isLight));
+  }
+
+  localStorage.setItem("theme", isLight ? "light" : "dark");
+}
+
+const savedTheme = localStorage.getItem("theme");
+
+if (savedTheme === "light") {
+  setTheme(true);
+} else {
+  setTheme(false);
+}
+
+if (themeToggle) {
+  themeToggle.addEventListener("click", () => {
+    const isLight = !document.body.classList.contains("light-mode");
+    setTheme(isLight);
+  });
+}
+
+// =========================
+// SCROLL TO TOP
+// =========================
+
+const scrollToTopButton = document.getElementById("scroll-to-top");
+
+window.addEventListener(
+  "scroll",
+  () => {
+    if (!scrollToTopButton) return;
+
+    scrollToTopButton.classList.toggle(
+      "show",
+      window.scrollY > 400
+    );
+  },
+  { passive: true }
+);
+
+if (scrollToTopButton) {
+  scrollToTopButton.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+}

@@ -256,10 +256,7 @@
           </div>
         </div>
 
-        <a href="#about" class="scroll-cue hidden sm:flex">
-          Scroll to explore
-          <i class="fa-solid fa-chevron-down"></i>
-        </a>
+        
       </section>
 
       <!-- =========================
@@ -334,10 +331,11 @@
                     href="https://www.chess.com/member/prateek5757"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="rounded-xl border border-white/7 bg-white/[.025] px-4 py-3 text-sm text-slate-300"
+                    class="chess-link rounded-xl border border-white/7 bg-white/[.025] px-4 py-3 text-sm text-slate-300"
                   >
-                    <i class="fa-solid fa-chess-knight text-blue-400 mr-2"></i>
-                    Chess & Strategy 
+                    <i class="fa-solid fa-chess-knight text-blue-400"></i>
+                    <span>Chess & Strategy</span>
+                    <i class="fa-solid fa-arrow-right chess-arrow"></i>
                   </a>
 
                   <!-- Projects -->
@@ -734,7 +732,7 @@
           </div>
 
           <div
-            class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 mt-14"
+            class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-14"
           >
             <!-- C++ -->
             <button
@@ -1033,7 +1031,7 @@
                       id="name"
                       name="name"
                       required
-                      placeholder="Abc"
+                      placeholder="John Doe"
                     />
                   </div>
 
@@ -1051,7 +1049,7 @@
                       id="email"
                       name="email"
                       required
-                      placeholder="abc@example.com"
+                      placeholder="john.doe@example.com"
                     />
                   </div>
                 </div>
@@ -1167,13 +1165,37 @@
             >
               <i class="fa-regular fa-envelope"></i>
             </a>
+
+            <!-- Theme Toggle -->
+            <button
+              id="theme-toggle"
+              class="theme-toggle"
+              type="button"
+              aria-label="Switch to light mode"
+              aria-pressed="false"
+            >
+              <i id="theme-icon" class="fa-solid fa-sun"></i>
+            </button>
           </div>
 
-          <p class="text-xs text-slate-500">
-            ©
-            <span id="year"></span>
-            Prateek Jangir. All rights reserved.
-          </p>
+          <!-- Scroll to Top -->
+          <div class="text-center">
+            <button
+              id="scroll-to-top"
+              class="scroll-to-top"
+              type="button"
+              aria-label="Scroll to top"
+            >
+              <i class="fa-solid fa-arrow-up"></i>
+              <span>Scroll to Top</span>
+            </button>
+
+            <p class="text-xs text-slate-500 mt-3">
+              ©
+              <span id="year"></span>
+              Prateek Jangir. All rights reserved.
+            </p>
+          </div>
         </div>
       </div>
     </footer>

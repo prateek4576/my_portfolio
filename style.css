@@ -8,8 +8,14 @@
   --violet: #a78bfa;
   --border: rgba(255, 255, 255, 0.09);
 
-  --gradient: linear-gradient(135deg, #60a5fa 0%, #818cf8 48%, #c084fc 100%);
+  --gradient: linear-gradient(
+  135deg,
+  #2563eb 0%,
+  #3b82f6 55%,
+  #6366f1 100%
+);
 }
+
 
 * {
   box-sizing: border-box;
@@ -34,51 +40,587 @@ body {
       transparent 24rem
     ),
     var(--bg);
-
   color: var(--text);
-
   font-family: Inter, sans-serif;
-
   overflow-x: hidden;
 }
 
-/* Grid background */
+/* =========================================================
+   LIGHT THEME
+========================================================= */
+
+body.light-mode {
+  --bg: #f5f7fb;
+  --panel: #ffffff;
+  --panel-soft: rgba(255, 255, 255, 0.88);
+
+  --text: #0f172a;
+  --muted: #64748b;
+
+  --blue: #2563eb;
+  --violet: #7c3aed;
+
+  --border: rgba(15, 23, 42, 0.12);
+
+  background:
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(96, 165, 250, 0.10),
+      transparent 26rem
+    ),
+    radial-gradient(
+      circle at 92% 14%,
+      rgba(167, 139, 250, 0.10),
+      transparent 24rem
+    ),
+    var(--bg);
+
+  color: var(--text);
+}
+
+
+/* =========================================================
+   PAGE BACKGROUND
+========================================================= */
+
+body.light-mode::before {
+  opacity: 0.28;
+
+  background-image:
+    linear-gradient(
+      rgba(15, 23, 42, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(15, 23, 42, 0.035) 1px,
+      transparent 1px
+    );
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+body.light-mode .nav {
+  background: rgba(248, 250, 252, 0.82);
+  border-bottom-color: rgba(15, 23, 42, 0.08);
+}
+
+body.light-mode .nav.scrolled {
+  background: rgba(248, 250, 252, 0.94);
+  border-bottom-color: rgba(15, 23, 42, 0.10);
+  box-shadow: 0 12px 35px rgba(15, 23, 42, 0.08);
+}
+
+body.light-mode .nav-link {
+  color: #475569;
+}
+
+body.light-mode .nav-link:hover {
+  color: #0f172a;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+body.light-mode .hero-grid {
+  background: transparent;
+}
+
+body.light-mode .hero-orb {
+  opacity: 0.55;
+}
+
+body.light-mode .orb-blue {
+  background: rgba(59, 130, 246, 0.12);
+}
+
+body.light-mode .orb-violet {
+  background: rgba(139, 92, 246, 0.10);
+}
+
+/* Hero image outer rings */
+body.light-mode .avatar-wrap {
+  box-shadow:
+    0 0 0 1px rgba(15, 23, 42, 0.06),
+    0 35px 100px rgba(37, 99, 235, 0.12);
+}
+
+body.light-mode .avatar-wrap::before,
+body.light-mode .avatar-wrap::after {
+  border-color: rgba(15, 23, 42, 0.12);
+}
+
+/* This removes the dark circle/border around your photo */
+body.light-mode .avatar-inner {
+  border-color: #f8fafc;
+  background: #ffffff;
+}
+
+
+/* =========================================================
+   TEXT COLORS
+========================================================= */
+
+/* Tailwind slate text used throughout your HTML */
+body.light-mode .text-slate-200 {
+  color: #1e293b !important;
+}
+
+body.light-mode .text-slate-300 {
+  color: #334155 !important;
+}
+
+body.light-mode .text-slate-400 {
+  color: #475569 !important;
+}
+
+body.light-mode .text-slate-500 {
+  color: #64748b !important;
+}
+
+body.light-mode .text-slate-600 {
+  color: #475569 !important;
+}
+
+body.light-mode .text-slate-700 {
+  color: #334155 !important;
+}
+
+body.light-mode .text-white {
+  color: #0f172a !important;
+}
+
+
+/* =========================================================
+   HEADINGS / SECTION TEXT
+========================================================= */
+
+body.light-mode h1,
+body.light-mode h2,
+body.light-mode h3,
+body.light-mode h4 {
+  color: #0f172a;
+}
+
+body.light-mode .section-kicker {
+  color: #2563eb;
+}
+
+body.light-mode .section-line {
+  background: var(--gradient);
+}
+
+
+/* =========================================================
+   CARDS
+========================================================= */
+
+body.light-mode .card {
+  background: rgba(255, 255, 255, 0.86);
+  border-color: rgba(15, 23, 42, 0.10);
+
+  box-shadow:
+    0 18px 55px rgba(15, 23, 42, 0.08);
+}
+
+body.light-mode .card:hover {
+  border-color: rgba(37, 99, 235, 0.22);
+
+  box-shadow:
+    0 24px 65px rgba(15, 23, 42, 0.12);
+}
+
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+body.light-mode .skill-box {
+  color: #2563eb;
+
+  background: rgba(37, 99, 235, 0.055);
+
+  border-color: rgba(15, 23, 42, 0.08);
+}
+
+body.light-mode .skill-box:hover {
+  background: rgba(37, 99, 235, 0.10);
+
+  border-color: rgba(37, 99, 235, 0.25);
+}
+
+
+/* =========================================================
+   TECHNOLOGY TAGS
+========================================================= */
+
+body.light-mode .tech-tag {
+  color: #2563eb;
+
+  background: rgba(37, 99, 235, 0.06);
+
+  border-color: rgba(15, 23, 42, 0.08);
+}
+
+
+/* =========================================================
+   BEYOND THE CODE
+========================================================= */
+
+body.light-mode .beyond-code-grid > div,
+body.light-mode .beyond-code-grid > a {
+  color: #334155 !important;
+
+  background: rgba(255, 255, 255, 0.72) !important;
+
+  border-color: rgba(15, 23, 42, 0.10) !important;
+}
+
+body.light-mode .beyond-code-grid > div:hover,
+body.light-mode .beyond-code-grid > a:hover {
+  background: rgba(37, 99, 235, 0.06) !important;
+
+  border-color: rgba(37, 99, 235, 0.28) !important;
+}
+
+
+/* =========================================================
+   ICON BOXES
+========================================================= */
+
+body.light-mode .contact-icon {
+  color: #2563eb;
+
+  background: rgba(15, 23, 42, 0.025);
+
+  border-color: rgba(15, 23, 42, 0.10);
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+body.light-mode .btn-secondary {
+  color: #334155;
+
+  background: rgba(255, 255, 255, 0.75);
+
+  border-color: rgba(15, 23, 42, 0.12);
+}
+
+body.light-mode .btn-secondary:hover {
+  color: #0f172a;
+
+  background: rgba(37, 99, 235, 0.06);
+
+  border-color: rgba(37, 99, 235, 0.28);
+}
+
+/* Keep primary buttons white on gradient */
+body.light-mode .btn-primary {
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   PROJECT SECTION
+========================================================= */
+
+body.light-mode #projects {
+  background: rgba(15, 23, 42, 0.025) !important;
+  border-top-color: rgba(15, 23, 42, 0.08) !important;
+  border-bottom-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+body.light-mode .project-card {
+  background: rgba(255, 255, 255, 0.88);
+}
+
+body.light-mode .project-number {
+  color: #000000;
+  background: rgba(255, 255, 255, 0.80);
+  border: 1px solid #000000;
+}
+
+/* Project screenshots - light mode */
+body.light-mode .project-screenshots img {
+  border: 1px solid #000000;
+}
+
+
+/* =========================================================
+   CERTIFICATES
+========================================================= */
+
+body.light-mode .cert-card {
+  background: #ffffff;
+  border: 1px solid #000000;
+}
+
+body.light-mode .cert-overlay {
+  background:
+    linear-gradient(
+      transparent,
+      rgba(15, 23, 42, 0.82)
+    );
+}
+
+
+/* =========================================================
+   CONTACT SECTION
+========================================================= */
+
+body.light-mode #contact {
+  background: rgba(15, 23, 42, 0.025) !important;
+
+  border-top-color: rgba(15, 23, 42, 0.08) !important;
+  border-bottom-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+
+/* =========================================================
+   FORM FIELDS
+========================================================= */
+
+body.light-mode .field {
+  color: #0f172a;
+
+  background: #ffffff;
+
+  border-color: rgba(15, 23, 42, 0.12);
+}
+
+body.light-mode .field::placeholder {
+  color: #94a3b8;
+}
+
+body.light-mode .field:focus {
+  background: #ffffff;
+
+  border-color: rgba(37, 99, 235, 0.45);
+
+  box-shadow:
+    0 0 0 4px rgba(37, 99, 235, 0.08);
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+body.light-mode .status-dot {
+  box-shadow:
+    0 0 0 5px rgba(52, 211, 153, 0.10),
+    0 0 22px rgba(52, 211, 153, 0.25);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+body.light-mode footer {
+  background: transparent;
+}
+
+
+/* =========================================================
+   THEME TOGGLE
+========================================================= */
+
+body.light-mode .theme-toggle {
+  color: #334155;
+
+  background: rgba(15, 23, 42, 0.035);
+
+  border-color: rgba(15, 23, 42, 0.12);
+}
+
+body.light-mode .theme-toggle:hover {
+  color: #0f172a;
+
+  background: rgba(37, 99, 235, 0.08);
+
+  border-color: rgba(37, 99, 235, 0.28);
+}
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+body.light-mode .mobile-menu {
+  background:
+    linear-gradient(
+      160deg,
+      rgba(255, 255, 255, 0.98),
+      rgba(245, 247, 251, 0.98)
+    );
+
+  border-left-color: rgba(15, 23, 42, 0.10);
+
+  box-shadow:
+    -20px 0 60px rgba(15, 23, 42, 0.12);
+}
+
+body.light-mode .mobile-menu .mobile-link {
+  color: #334155;
+}
+
+body.light-mode .mobile-menu .mobile-link:hover {
+  color: #0f172a;
+
+  background: rgba(37, 99, 235, 0.06);
+}
+
+
+/* =========================================================
+   CERTIFICATE IMAGE MODAL
+========================================================= */
+
+body.light-mode .modal {
+  background: rgba(241, 245, 249, 0.88);
+}
+
+body.light-mode .modal-shell {
+  background: #ffffff;
+
+  border-color: rgba(15, 23, 42, 0.10);
+
+  box-shadow:
+    0 35px 100px rgba(15, 23, 42, 0.20);
+}
+
+body.light-mode .modal-shell img {
+  background: #f8fafc;
+}
+
+body.light-mode .modal-close {
+  color: #0f172a;
+
+  background: rgba(255, 255, 255, 0.90);
+
+  border-color: rgba(15, 23, 42, 0.12);
+}
+
+
+/* =========================================================
+   PROJECT DETAILS MODAL
+========================================================= */
+
+body.light-mode .project-modal {
+  background: rgba(241, 245, 249, 0.88);
+}
+
+body.light-mode .project-modal-shell {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.98),
+      rgba(248, 250, 252, 0.98)
+    );
+
+  border-color: rgba(15, 23, 42, 0.10);
+
+  box-shadow:
+    0 35px 100px rgba(15, 23, 42, 0.20);
+}
+
+body.light-mode .project-modal-close {
+  color: #0f172a;
+
+  background: rgba(255, 255, 255, 0.85);
+
+  border-color: rgba(15, 23, 42, 0.12);
+}
+
+body.light-mode .project-detail-block {
+  background: rgba(15, 23, 42, 0.025);
+
+  border-color: rgba(15, 23, 42, 0.08);
+}
+
+body.light-mode .project-detail-block h3 {
+  color: #0f172a;
+}
+
+body.light-mode .project-detail-block p {
+  color: #475569;
+}
+
+body.light-mode .project-overview-list {
+  color: #475569;
+}
+
+
+/* =========================================================
+   GLOBAL LIGHT-MODE BORDERS
+========================================================= */
+
+body.light-mode .border-white\/10 {
+  border-color: rgba(15, 23, 42, 0.10) !important;
+}
+
+body.light-mode .border-white\/\[\.04\] {
+  border-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+
+/* =========================================================
+   DARK ICON → LIGHT THEME
+========================================================= */
+
+body.light-mode .text-blue-400 {
+  color: #2563eb !important;
+}
+
+body.light-mode .text-violet-400 {
+  color: #7c3aed !important;
+}
+
+body.light-mode .text-emerald-400 {
+  color: #059669 !important;
+}
+
+body.light-mode .text-amber-300 {
+  color: #d97706 !important;
+}
+
+
 
 body::before {
   content: "";
-
   position: fixed;
   inset: 0;
-
   pointer-events: none;
-
   z-index: -1;
-
   opacity: 0.38;
-
   background-image:
     linear-gradient(rgba(255, 255, 255, 0.022) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.022) 1px, transparent 1px);
 
   background-size: 42px 42px;
-
   mask-image: linear-gradient(to bottom, black 0%, transparent 82%);
 }
-
-/* Selection */
 
 ::selection {
   background: rgba(96, 165, 250, 0.32);
   color: #fff;
 }
 
-/* Fonts */
+
 
 .font-display {
   font-family: Manrope, sans-serif;
 }
 
-/* Gradient text */
+
 
 .gradient-text {
   background: var(--gradient);
@@ -99,41 +641,31 @@ body::before {
     rgba(17, 24, 39, 0.76),
     rgba(10, 15, 25, 0.68)
   );
-
   border: 1px solid var(--border);
-
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.22);
-
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
 }
 
 .nav {
   background: rgba(7, 11, 20, 0.68);
-
   border-bottom: 1px solid transparent;
-
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-
   transition: 0.3s ease;
 }
 
 .nav.scrolled {
   background: rgba(7, 11, 20, 0.9);
-
   border-bottom-color: var(--border);
-
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.22);
 }
 
-/* Navigation links */
+
 
 .nav-link {
   position: relative;
-
   color: #94a3b8;
-
   transition: color 0.25s ease;
 }
 
@@ -143,22 +675,16 @@ body::before {
 
 .nav-link::after {
   content: "";
-
   position: absolute;
 
   left: 0;
   bottom: -9px;
-
   width: 100%;
   height: 2px;
-
   border-radius: 99px;
-
   transform: scaleX(0);
   transform-origin: center;
-
   background: var(--gradient);
-
   transition: transform 0.25s ease;
 }
 
@@ -169,35 +695,26 @@ body::before {
 
 .hero-orb {
   position: absolute;
-
   border-radius: 999px;
-
   filter: blur(75px);
-
   pointer-events: none;
-
   animation: floatOrb 9s ease-in-out infinite;
 }
 
 .orb-blue {
   width: 300px;
   height: 300px;
-
   left: -80px;
   top: 9%;
-
   background: rgba(59, 130, 246, 0.17);
 }
 
 .orb-violet {
   width: 360px;
   height: 360px;
-
   right: -120px;
   top: 15%;
-
   background: rgba(139, 92, 246, 0.15);
-
   animation-delay: -3s;
 }
 
@@ -218,9 +735,7 @@ body::before {
 
 .hero-grid::before {
   content: "";
-
   position: absolute;
-
   inset: -1px;
 
   background:
@@ -240,17 +755,11 @@ body::before {
 
 .avatar-wrap {
   position: relative;
-
   width: min(360px, 76vw);
-
   aspect-ratio: 1;
-
   border-radius: 50%;
-
   padding: 3px;
-
   background: conic-gradient(from 180deg, #60a5fa, #818cf8, #c084fc, #60a5fa);
-
   box-shadow:
     0 0 0 1px rgba(255, 255, 255, 0.07),
     0 35px 100px rgba(37, 99, 235, 0.18);
@@ -259,43 +768,31 @@ body::before {
 .avatar-wrap::before,
 .avatar-wrap::after {
   content: "";
-
   position: absolute;
-
   border: 1px solid rgba(255, 255, 255, 0.11);
-
   border-radius: 50%;
-
   inset: -18px;
 }
 
 .avatar-wrap::after {
   inset: -38px;
-
   border-style: dashed;
-
   opacity: 0.45;
 }
 
 .avatar-inner {
   height: 100%;
   width: 100%;
-
   border-radius: 50%;
-
   overflow: hidden;
-
   border: 8px solid #090f1a;
-
   background: #111827;
 }
 
 .status-dot {
   width: 11px;
   height: 11px;
-
   border-radius: 999px;
-
   background: #34d399;
 
   box-shadow:
@@ -305,35 +802,23 @@ body::before {
 
 .floating-card {
   position: absolute;
-
   padding: 12px 15px;
-
   border: 1px solid var(--border);
-
   background: rgba(9, 15, 26, 0.82);
-
   backdrop-filter: blur(14px);
-
   border-radius: 16px;
-
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
 }
 
 .btn-primary,
 .btn-secondary {
   display: inline-flex;
-
   align-items: center;
   justify-content: center;
-
   gap: 0.65rem;
-
   border-radius: 14px;
-
   padding: 0.9rem 1.2rem;
-
   font-weight: 700;
-
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease,
@@ -341,68 +826,52 @@ body::before {
     border-color 0.25s ease;
 }
 
-/* Primary */
+
 
 .btn-primary {
   color: #fff;
-
   background: var(--gradient);
-
   box-shadow: 0 12px 32px rgba(79, 70, 229, 0.25);
 }
 
 .btn-primary:hover {
   transform: translateY(-3px);
-
   box-shadow: 0 18px 42px rgba(79, 70, 229, 0.34);
 }
 
-/* Secondary */
+
 
 .btn-secondary {
   color: #e2e8f0;
-
   background: rgba(255, 255, 255, 0.035);
-
   border: 1px solid var(--border);
 }
 
 .btn-secondary:hover {
   transform: translateY(-3px);
-
   border-color: rgba(96, 165, 250, 0.35);
-
   background: rgba(96, 165, 250, 0.08);
 }
 
 .section-kicker {
   color: #93c5fd;
-
   font-size: 0.78rem;
-
   font-weight: 800;
-
   text-transform: uppercase;
-
   letter-spacing: 0.18em;
 }
 
 .section-line {
   width: 58px;
   height: 3px;
-
   border-radius: 99px;
-
   background: var(--gradient);
-
   margin: 16px auto 0;
 }
 
 .card {
   border: 1px solid var(--border);
-
   border-radius: 22px;
-
   background: linear-gradient(
     145deg,
     rgba(17, 24, 39, 0.7),
@@ -419,47 +888,30 @@ body::before {
 
 .card:hover {
   transform: translateY(-7px);
-
   border-color: rgba(96, 165, 250, 0.25);
-
   box-shadow: 0 24px 65px rgba(0, 0, 0, 0.26);
 }
 
 .skill-pill {
   display: inline-flex;
-
   align-items: center;
-
   gap: 0.6rem;
-
   padding: 0.65rem 0.9rem;
-
   border: 1px solid rgba(255, 255, 255, 0.085);
-
   border-radius: 14px;
-
   background: rgba(255, 255, 255, 0.035);
-
   color: #dbeafe;
-
   font-size: 0.9rem;
-
   font-weight: 600;
-
   transition: 0.25s ease;
 }
 
 .skill-pill:hover {
   transform: translateY(-3px);
-
   background: rgba(96, 165, 250, 0.08);
-
   border-color: rgba(96, 165, 250, 0.3);
 }
 
-/* =========================
-   PROFILE CARD
-========================= */
 
 .profile-card {
   display: flex;
@@ -467,9 +919,6 @@ body::before {
 }
 
 
-/* =========================
-   BEYOND THE CODE
-========================= */
 
 .beyond-code {
   flex: 1;
@@ -482,14 +931,10 @@ body::before {
 
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-
   grid-template-rows: repeat(2, 1fr);
-
   gap: 14px;
 }
 
-
-/* Individual boxes */
 
 .beyond-code-grid > div {
   display: flex;
@@ -498,12 +943,9 @@ body::before {
 
   min-height: 58px;
   padding: 0 18px;
-
   border-radius: 14px;
 }
 
-
-/* Icon spacing */
 
 .beyond-code-grid > div i {
   width: 22px;
@@ -513,42 +955,31 @@ body::before {
 
 .project-card {
   overflow: hidden;
-
   height: 100%;
-
   display: flex;
-
   flex-direction: column;
 }
 
 .project-image {
   position: relative;
-
   height: 218px;
-
   overflow: hidden;
 }
 
 .project-image img {
   width: 100%;
   height: 100%;
-
   object-fit: cover;
 }
 
 .project-image::after {
   content: "";
-
   position: absolute;
-
   inset: 0;
-
   background: linear-gradient(to top, rgba(7, 11, 20, 0.72), transparent 62%);
-
   pointer-events: none;
 }
 
-/* Project number */
 
 .project-number {
   position: absolute;
@@ -560,48 +991,30 @@ body::before {
 
   width: 36px;
   height: 36px;
-
   border-radius: 12px;
 
   display: grid;
   place-items: center;
-
   font-size: 0.8rem;
-
   font-weight: 800;
-
   color: #e0f2fe;
-
   background: rgba(7, 11, 20, 0.6);
-
   border: 1px solid rgba(255, 255, 255, 0.12);
-
   backdrop-filter: blur(12px);
 }
 
-/* Technology tag */
-
 .tech-tag {
   display: inline-flex;
-
   align-items: center;
-
   border-radius: 999px;
-
   border: 1px solid rgba(255, 255, 255, 0.075);
-
   padding: 0.35rem 0.62rem;
-
   font-size: 0.72rem;
-
   font-weight: 700;
-
   color: #bfdbfe;
-
   background: rgba(96, 165, 250, 0.07);
 }
 
-/* Skills - Square Rounded Boxes */
 .skill-box {
   display: inline-flex;
   align-items: center;
@@ -609,13 +1022,9 @@ body::before {
 
   min-height: 40px;
   padding: 0.45rem 0.8rem;
-
   border-radius: 10px;
-
   border: 1px solid rgba(255, 255, 255, 0.09);
-
   background: rgba(255, 255, 255, 0.035);
-
   color: #bfdbfe;
 
   font-size: 0.78rem;
@@ -635,17 +1044,11 @@ body::before {
 
 .cert-card {
   position: relative;
-
   overflow: hidden;
-
   border-radius: 20px;
-
   border: 1px solid var(--border);
-
   background: #0d1320;
-
   cursor: pointer;
-
   padding: 0;
 }
 
@@ -657,21 +1060,15 @@ body::before {
 
 .cert-card:hover img {
   transform: scale(1.04);
-
   opacity: 0.78;
 }
 
 .cert-overlay {
   position: absolute;
-
   inset: auto 0 0;
-
   padding: 18px;
-
   background: linear-gradient(transparent, rgba(7, 11, 20, 0.95));
-
   transform: translateY(6px);
-
   transition: 0.3s ease;
 }
 
@@ -679,25 +1076,15 @@ body::before {
   transform: translateY(0);
 }
 
-/* =========================
-   PROJECT DETAILS MODAL
-========================= */
 
 .project-modal {
   position: fixed;
-
   inset: 0;
-
   z-index: 200;
-
   display: none;
-
   padding: 20px;
-
   background: rgba(1, 4, 10, 0.88);
-
   backdrop-filter: blur(14px);
-
   overflow-y: auto;
 }
 
@@ -708,21 +1095,13 @@ body::before {
   justify-content: center;
 }
 
-/* Modal shell */
-
 .project-modal-shell {
   position: relative;
-
   width: min(100%, 1050px);
-
   max-height: 92vh;
-
   overflow-y: auto;
-
   border-radius: 24px;
-
   border: 1px solid rgba(255, 255, 255, 0.1);
-
   background: linear-gradient(
     145deg,
     rgba(17, 24, 39, 0.96),
@@ -730,11 +1109,8 @@ body::before {
   );
 
   box-shadow: 0 35px 100px rgba(0, 0, 0, 0.55);
-
   padding: 32px;
 }
-
-/* Close */
 
 .project-modal-close {
   position: absolute;
@@ -747,19 +1123,12 @@ body::before {
 
   display: grid;
   place-items: center;
-
   border-radius: 50%;
-
   border: 1px solid rgba(255, 255, 255, 0.12);
-
   background: rgba(255, 255, 255, 0.04);
-
   color: white;
-
   font-size: 1.5rem;
-
   cursor: pointer;
-
   transition:
     background 0.2s ease,
     border-color 0.2s ease;
@@ -767,57 +1136,36 @@ body::before {
 
 .project-modal-close:hover {
   background: rgba(255, 255, 255, 0.1);
-
   border-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Header */
-
 .project-modal-header {
   padding-right: 55px;
-
   padding-bottom: 25px;
-
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* Content */
-
 .project-modal-content {
   display: grid;
-
   gap: 24px;
-
   margin-top: 28px;
 }
 
-/* Detail block */
-
 .project-detail-block {
   padding: 20px;
-
   border-radius: 18px;
-
   border: 1px solid rgba(255, 255, 255, 0.07);
-
   background: rgba(255, 255, 255, 0.025);
 }
 
 .project-detail-block h3 {
   display: flex;
-
   align-items: center;
-
   gap: 10px;
-
   margin: 0 0 10px;
-
   font-family: Manrope, sans-serif;
-
   font-size: 1rem;
-
   font-weight: 800;
-
   color: #f8fafc;
 }
 
@@ -827,21 +1175,14 @@ body::before {
 
 .project-detail-block p {
   margin: 0;
-
   color: #94a3b8;
-
   line-height: 1.75;
-
   font-size: 0.95rem;
 }
 
-/* Tech tags */
-
 .project-detail-tags {
   display: flex;
-
   flex-wrap: wrap;
-
   gap: 8px;
 }
 
@@ -849,8 +1190,6 @@ body::before {
   font-size: 0.78rem;
 }
 
-
-/* Screenshots */
 .project-screenshots {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -864,37 +1203,24 @@ body::before {
   border-radius: 12px;
 }
 
-/* Footer */
-
 .project-modal-footer {
   display: flex;
-
   flex-wrap: wrap;
-
   gap: 12px;
-
   margin-top: 28px;
-
   padding-top: 24px;
-
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
-
-/* Make card look clickable */
 
 .project-card {
   cursor: pointer;
 }
-
-/* Keyboard focus */
 
 .project-card:focus-visible {
   outline: 2px solid var(--blue);
 
   outline-offset: 4px;
 }
-
-/* Mobile */
 
 @media (max-width: 767px) {
   .project-modal {
@@ -903,9 +1229,7 @@ body::before {
 
   .project-modal-shell {
     padding: 22px;
-
     max-height: 94vh;
-
     border-radius: 20px;
   }
 
@@ -941,33 +1265,20 @@ body::before {
 
   display: grid;
   place-items: center;
-
   border-radius: 14px;
-
   border: 1px solid var(--border);
-
   background: rgba(255, 255, 255, 0.035);
-
   color: #93c5fd;
 }
 
-/* Form fields */
-
 .field {
   width: 100%;
-
   border-radius: 14px;
-
   border: 1px solid rgba(255, 255, 255, 0.09);
-
   background: rgba(7, 11, 20, 0.48);
-
   padding: 0.88rem 1rem;
-
   color: #fff;
-
   outline: none;
-
   transition: 0.25s ease;
 }
 
@@ -977,15 +1288,9 @@ body::before {
 
 .field:focus {
   border-color: rgba(96, 165, 250, 0.5);
-
   box-shadow: 0 0 0 4px rgba(96, 165, 250, 0.08);
-
   background: rgba(7, 11, 20, 0.62);
 }
-
-/* =========================
-   MOBILE MENU
-========================= */
 
 @media (max-width: 767px) {
 
@@ -1043,15 +1348,10 @@ body::before {
   .mobile-menu .mobile-link {
     display: flex;
     align-items: center;
-
     min-height: 52px;
-
     padding: 0 18px;
-
     border-radius: 14px;
-
     color: #cbd5e1;
-
     font-size: 1rem;
     font-weight: 600;
 
@@ -1101,19 +1401,12 @@ body::before {
 
 .modal {
   position: fixed;
-
   inset: 0;
-
-  z-index: 100;
-
+  z-index: 300;
   display: none;
-
   place-items: center;
-
   padding: 20px;
-
   background: rgba(1, 4, 10, 0.86);
-
   backdrop-filter: blur(12px);
 }
 
@@ -1123,52 +1416,34 @@ body::before {
 
 .modal-shell {
   width: min(100%, 1100px);
-
   height: min(90vh, 900px);
-
   border-radius: 22px;
-
   border: 1px solid rgba(255, 255, 255, 0.12);
-
   background: #0b111d;
-
   box-shadow: 0 35px 100px rgba(0, 0, 0, 0.55);
-
   overflow: hidden;
-
   position: relative;
 }
 
 .modal-shell img {
   width: 100%;
   height: 100%;
-
   object-fit: contain;
-
   background: #070b14;
 }
 
 .modal-close {
   position: absolute;
-
   z-index: 2;
-
   top: 14px;
   right: 14px;
-
   width: 42px;
   height: 42px;
-
   border-radius: 50%;
-
   background: rgba(7, 11, 20, 0.75);
-
   border: 1px solid rgba(255, 255, 255, 0.12);
-
   color: white;
-
   font-size: 1.4rem;
-
   cursor: pointer;
 
   transition: 0.2s ease;
@@ -1178,35 +1453,7 @@ body::before {
   background: rgba(255, 255, 255, 0.12);
 }
 
-.scroll-cue {
-  position: absolute;
 
-  bottom: 22px;
-
-  left: 50%;
-
-  transform: translateX(-50%);
-
-  color: #64748b;
-
-  font-size: 0.72rem;
-
-  letter-spacing: 0.13em;
-
-  text-transform: uppercase;
-
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: center;
-
-  gap: 7px;
-}
-
-.scroll-cue i {
-  animation: bounce 1.8s infinite;
-}
 
 @keyframes bounce {
   0%,
@@ -1303,7 +1550,6 @@ body::before {
   }
 }
 
-/* Project Overview */
 .project-overview-list {
   margin: 0;
   padding-left: 1.4rem;
@@ -1327,9 +1573,6 @@ body::before {
   color: #60a5fa;
   font-size: 0.9em;
 }
-/* =========================
-   HAMBURGER MENU
-========================= */
 
 .hamburger {
   position: relative;
@@ -1338,11 +1581,9 @@ body::before {
   height: 44px;
   overflow: visible;
   flex-shrink: 0;
-  display: grid;
-  place-items: center;
 }
 
-/* Normal 3 lines */
+
 .hamburger span {
   display: block;
   width: 23px;
@@ -1356,9 +1597,7 @@ body::before {
 .hamburger span + span {
   margin-top: 5px;
 }
-/* =========================
-   OPEN = >
-========================= */
+
 
 .hamburger.open span {
   position: absolute;
@@ -1379,8 +1618,6 @@ body::before {
 .hamburger.open span:nth-child(3) {
   transform: translate(-50%, -50%) rotate(-45deg);
 }
-
-
 
 .beyond-code-grid > a {
   display: flex;
@@ -1409,4 +1646,157 @@ body::before {
   width: 22px;
   text-align: center;
   margin-right: 10px;
+}
+
+
+/* =========================
+   THEME TOGGLE
+========================= */
+
+.theme-toggle {
+  width: 44px;
+  height: 44px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.035);
+
+  color: #93c5fd;
+  font-size: 1rem;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.theme-toggle:hover {
+  background: rgba(96, 165, 250, 0.08);
+  border-color: rgba(96, 165, 250, 0.3);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+@media (min-width: 768px) {
+  #mobile-menu-btn {
+    display: none !important;
+  }
+}
+
+/* Darker skill category headings in light mode */
+body.light-mode .text-blue-300 {
+  color: #4d4175 !important;
+}
+
+/* =========================
+   SCROLL TO TOP
+========================= */
+
+.scroll-to-top {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  margin: 28px auto 0;
+  padding: 10px 16px;
+
+  border: 1px solid var(--border);
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.035);
+  color: #94a3b8;
+
+  font-size: 0.82rem;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transform: translateY(8px);
+
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease,
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.scroll-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.scroll-to-top:hover {
+  transform: translateY(-2px);
+
+  background: rgba(96, 165, 250, 0.08);
+  border-color: rgba(96, 165, 250, 0.3);
+  color: #60a5fa;
+}
+
+body.light-mode .scroll-to-top {
+  background: rgba(15, 23, 42, 0.035);
+  border-color: rgba(15, 23, 42, 0.12);
+  color: #475569;
+}
+
+body.light-mode .scroll-to-top:hover {
+  background: rgba(37, 99, 235, 0.07);
+  border-color: rgba(37, 99, 235, 0.28);
+  color: #2563eb;
+}
+
+/* Hamburger icon in light mode */
+body.light-mode .hamburger span {
+  background: #000000;
+}
+
+
+.project-screenshots img {
+  cursor: zoom-in;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-screenshots img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+
+.chess-link {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0px;
+  text-decoration: none;
+}
+
+.chess-arrow {
+  color: #94a3b8;
+  margin-left: 2px;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.chess-link:hover .chess-arrow {
+  color: #60a5fa;
+  transform: translateX(3px);
+}
+
+/* Certificate titles stay white in light mode */
+body.light-mode .cert-overlay {
+  color: #ffffff !important;
 }
