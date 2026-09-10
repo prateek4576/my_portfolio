@@ -483,10 +483,11 @@ function setTheme(isLight) {
 
 const savedTheme = localStorage.getItem("theme");
 
-if (savedTheme === "light") {
-  setTheme(true);
-} else {
+if (savedTheme === "dark") {
   setTheme(false);
+} else {
+  
+  setTheme(true);
 }
 
 if (themeToggle) {
