@@ -466,10 +466,8 @@ function setTheme(isLight) {
   document.body.classList.toggle("light-mode", isLight);
 
   if (themeIcon) {
-    themeIcon.className = isLight
-      ? "fa-solid fa-moon"
-      : "fa-solid fa-sun";
-  }
+  themeIcon.className = "fa-solid fa-circle-half-stroke";
+}
 
   if (themeToggle) {
     themeToggle.setAttribute(
@@ -497,6 +495,22 @@ if (themeToggle) {
     setTheme(isLight);
   });
 }
+
+// =========================
+// KEYBOARD SHORTCUTS
+// =========================
+
+document.addEventListener("keydown", (event) => {
+  // Alt + T → Toggle theme
+  if (event.altKey && event.key.toLowerCase() === "t") {
+    event.preventDefault();
+
+    const isLight =
+      !document.body.classList.contains("light-mode");
+
+    setTheme(isLight);
+  }
+});
 
 // =========================
 // SCROLL TO TOP
