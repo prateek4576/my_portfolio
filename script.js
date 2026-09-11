@@ -1,3 +1,40 @@
+const lenis = new Lenis({
+  smoothWheel: true,
+  lerp: 0.08,
+  wheelMultiplier: 1.0,
+
+  allowNestedScroll: true,
+});
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);
+
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+  link.addEventListener("click", (event) => {
+    const targetId = link.getAttribute("href");
+
+    if (!targetId || targetId === "#") {
+      return;
+    }
+
+    const target = document.querySelector(targetId);
+
+    if (!target) {
+      return;
+    }
+
+    event.preventDefault();
+
+    lenis.scrollTo(target, {
+      offset: -76,
+      duration: 1.2,
+    });
+  });
+});
+
 const yearElement = document.getElementById("year");
 
 if (yearElement) {
@@ -42,8 +79,6 @@ updateNavbar();
 const menuBtn = document.getElementById("mobile-menu-btn");
 const mobileMenu = document.getElementById("mobile-menu");
 const mobileLinks = document.querySelectorAll(".mobile-link");
-
-
 
 function toggleMenu(force) {
   if (!mobileMenu || !menuBtn) {
@@ -121,12 +156,12 @@ const projectData = {
 
     title: "CampusConnect",
 
-   overview: [
-  "Developed a full-stack campus lost-and-found platform enabling students to report, search, and recover belongings efficiently.",
-  "Integrated React.js with FastAPI and MongoDB to manage users, lost items, found items, and communication data.",
-  "Built real-time messaging features to help users communicate securely and coordinate item recovery.",
-  "Implemented JWT authentication with Google OAuth verification to provide secure access for registered users."
-],
+    overview: [
+      "Developed a full-stack campus lost-and-found platform enabling students to report, search, and recover belongings efficiently.",
+      "Integrated React.js with FastAPI and MongoDB to manage users, lost items, found items, and communication data.",
+      "Built real-time messaging features to help users communicate securely and coordinate item recovery.",
+      "Implemented JWT authentication with Google OAuth verification to provide secure access for registered users.",
+    ],
 
     technology: [
       "React.js",
@@ -138,7 +173,6 @@ const projectData = {
       "FastAPI",
     ],
 
-    
     authentication:
       "Google OAuth and JWT-based authentication are used to securely authenticate users and protect application resources.",
 
@@ -159,12 +193,12 @@ const projectData = {
     category: "Assessment Platform",
 
     title: "CAAT – Child Aptitude Assessment Test",
-   overview: [
-  "Engineered an interactive aptitude assessment platform covering Maths, Science, and Aptitude quizzes for students.",
-  "Connected MongoDB with Node.js and Express.js to manage users, scores, questions, and attempt history in one system.",
-  "Implemented instant result generation, subject-wise scoring, and dashboard-based performance tracking across three assessment areas.",
-  "Strengthened user authentication with bcrypt password hashing to protect user credentials."
-],
+    overview: [
+      "Engineered an interactive aptitude assessment platform covering Maths, Science, and Aptitude quizzes for students.",
+      "Connected MongoDB with Node.js and Express.js to manage users, scores, questions, and attempt history in one system.",
+      "Implemented instant result generation, subject-wise scoring, and dashboard-based performance tracking across three assessment areas.",
+      "Strengthened user authentication with bcrypt password hashing to protect user credentials.",
+    ],
 
     technology: [
       "HTML",
@@ -176,8 +210,6 @@ const projectData = {
       "bcrypt",
       "Nodemailer",
     ],
-
-   
 
     authentication:
       "User authentication is secured with password hashing using bcrypt and session-based access control.",
@@ -199,12 +231,12 @@ const projectData = {
     category: "Productivity Web App",
 
     title: "TaskFlow",
-   overview: [
-  "Developed a secure task management application with email/password registration and Google OAuth 2.0 authentication.",
-  "Implemented Express-Session with secure cookies to maintain persistent authenticated user sessions.",
-  "Used Passport.js and Passport-Local for authentication alongside hashed password validation.",
-  "Integrated PostgreSQL for SQL-based credential and user data storage with secure password hashing."
-],
+    overview: [
+      "Developed a secure task management application with email/password registration and Google OAuth 2.0 authentication.",
+      "Implemented Express-Session with secure cookies to maintain persistent authenticated user sessions.",
+      "Used Passport.js and Passport-Local for authentication alongside hashed password validation.",
+      "Integrated PostgreSQL for SQL-based credential and user data storage with secure password hashing.",
+    ],
 
     technology: [
       "HTML",
@@ -216,11 +248,8 @@ const projectData = {
       "OAuth 2.0",
     ],
 
-   
-
     authentication:
       "Google OAuth 2.0 provides secure login while session-based authentication maintains authenticated user sessions.",
-
 
     screenshots: [
       "images/todo.png",
@@ -243,7 +272,6 @@ const projectModalTech = document.getElementById("projectModalTech");
 
 const projectModalAuth = document.getElementById("projectModalAuth");
 
-
 const projectModalScreenshots = document.getElementById(
   "projectModalScreenshots",
 );
@@ -261,14 +289,11 @@ function openProjectModal(projectId) {
   projectModalTitle.textContent = project.title;
   projectModalOverview.innerHTML = `
   <ul class="project-overview-list">
-    ${project.overview
-      .map((item) => `<li>${item}</li>`)
-      .join("")}
+    ${project.overview.map((item) => `<li>${item}</li>`).join("")}
   </ul>
 `;
 
   projectModalAuth.textContent = project.authentication;
-
 
   projectModalTech.innerHTML = "";
 
@@ -282,32 +307,38 @@ function openProjectModal(projectId) {
 
   projectModalScreenshots.innerHTML = "";
 
- projectModalScreenshots.innerHTML = "";
+  projectModalScreenshots.innerHTML = "";
 
-project.screenshots.forEach((src) => {
-  const img = document.createElement("img");
+  project.screenshots.forEach((src) => {
+    const img = document.createElement("img");
 
-  img.src = src;
-  img.alt = `${project.title} screenshot`;
-  img.classList.add("project-screenshot-clickable");
+    img.src = src;
+    img.alt = `${project.title} screenshot`;
+    img.classList.add("project-screenshot-clickable");
 
-  img.addEventListener("click", () => {
-    openModal(
-      src,
-      "https://placehold.co/1200x675/f8fafc/0f172a?text=Screenshot+Unavailable"
-    );
+    img.addEventListener("click", () => {
+      openModal(
+        src,
+        "https://placehold.co/1200x675/f8fafc/0f172a?text=Screenshot+Unavailable",
+      );
+    });
+
+    projectModalScreenshots.appendChild(img);
   });
-
-  projectModalScreenshots.appendChild(img);
-});
 
   projectModalGithub.href = project.github;
   projectModalLive.href = project.live;
   projectModal.classList.add("show");
   projectModal.setAttribute("aria-hidden", "false");
 
-projectModalPreviousBodyOverflow = document.body.style.overflow;
-document.body.style.overflow = "hidden";
+  projectModalPreviousBodyOverflow = document.body.style.overflow;
+
+  document.documentElement.style.overflow = "hidden";
+  document.body.style.overflow = "hidden";
+
+  if (typeof lenis !== "undefined") {
+    lenis.stop();
+  }
 }
 
 function closeProjectModal() {
@@ -318,7 +349,12 @@ function closeProjectModal() {
   projectModal.classList.remove("show");
   projectModal.setAttribute("aria-hidden", "true");
 
+  document.documentElement.style.overflow = "";
   document.body.style.overflow = projectModalPreviousBodyOverflow;
+
+  if (typeof lenis !== "undefined") {
+    lenis.start();
+  }
 }
 
 const modal = document.getElementById("imageModal");
@@ -332,8 +368,15 @@ function openModal(src, fallback) {
 
   modal.classList.add("show");
   modal.setAttribute("aria-hidden", "false");
+
   imageModalPreviousBodyOverflow = document.body.style.overflow;
-document.body.style.overflow = "hidden";
+
+  document.documentElement.style.overflow = "hidden";
+  document.body.style.overflow = "hidden";
+
+  if (typeof lenis !== "undefined") {
+    lenis.stop();
+  }
 
   modalImage.onerror = function () {
     modalImage.onerror = null;
@@ -352,7 +395,12 @@ function closeModal() {
   modal.setAttribute("aria-hidden", "true");
   modalImage.src = "";
 
- document.body.style.overflow = imageModalPreviousBodyOverflow;
+  document.documentElement.style.overflow = "";
+  document.body.style.overflow = imageModalPreviousBodyOverflow;
+
+  if (typeof lenis !== "undefined") {
+    lenis.start();
+  }
 }
 
 certificateCards.forEach((card) => {
@@ -454,11 +502,6 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
-
-// =========================
-// THEME TOGGLE
-// =========================
-
 const themeToggle = document.getElementById("theme-toggle");
 const themeIcon = document.getElementById("theme-icon");
 
@@ -466,13 +509,13 @@ function setTheme(isLight) {
   document.body.classList.toggle("light-mode", isLight);
 
   if (themeIcon) {
-  themeIcon.className = "fa-solid fa-circle-half-stroke";
-}
+    themeIcon.className = "fa-solid fa-circle-half-stroke";
+  }
 
   if (themeToggle) {
     themeToggle.setAttribute(
       "aria-label",
-      isLight ? "Switch to dark mode" : "Switch to light mode"
+      isLight ? "Switch to dark mode" : "Switch to light mode",
     );
 
     themeToggle.setAttribute("aria-pressed", String(isLight));
@@ -486,7 +529,6 @@ const savedTheme = localStorage.getItem("theme");
 if (savedTheme === "dark") {
   setTheme(false);
 } else {
-  
   setTheme(true);
 }
 
@@ -497,25 +539,15 @@ if (themeToggle) {
   });
 }
 
-// =========================
-// KEYBOARD SHORTCUTS
-// =========================
-
 document.addEventListener("keydown", (event) => {
-  // Alt + T → Toggle theme
   if (event.altKey && event.key.toLowerCase() === "t") {
     event.preventDefault();
 
-    const isLight =
-      !document.body.classList.contains("light-mode");
+    const isLight = !document.body.classList.contains("light-mode");
 
     setTheme(isLight);
   }
 });
-
-// =========================
-// SCROLL TO TOP
-// =========================
 
 const scrollToTopButton = document.getElementById("scroll-to-top");
 
@@ -524,19 +556,15 @@ window.addEventListener(
   () => {
     if (!scrollToTopButton) return;
 
-    scrollToTopButton.classList.toggle(
-      "show",
-      window.scrollY > 400
-    );
+    scrollToTopButton.classList.toggle("show", window.scrollY > 400);
   },
-  { passive: true }
+  { passive: true },
 );
 
 if (scrollToTopButton) {
   scrollToTopButton.addEventListener("click", () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
+    lenis.scrollTo(0, {
+      duration: 1.5,
     });
   });
 }

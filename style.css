@@ -45,9 +45,6 @@ body {
   overflow-x: hidden;
 }
 
-/* =========================================================
-   LIGHT THEME
-========================================================= */
 
 body.light-mode {
   --bg: #f5f7fb;
@@ -79,10 +76,6 @@ body.light-mode {
 }
 
 
-/* =========================================================
-   PAGE BACKGROUND
-========================================================= */
-
 body.light-mode::before {
   opacity: 0.28;
 
@@ -98,19 +91,21 @@ body.light-mode::before {
     );
 }
 
-
-/* =========================================================
-   NAVBAR
-========================================================= */
-
 body.light-mode .nav {
-  background: rgba(248, 250, 252, 0.82);
+  background: rgba(248, 250, 252, 0.58);
   border-bottom-color: rgba(15, 23, 42, 0.08);
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
 body.light-mode .nav.scrolled {
-  background: rgba(248, 250, 252, 0.94);
+  background: rgba(248, 250, 252, 0.72);
   border-bottom-color: rgba(15, 23, 42, 0.10);
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
   box-shadow: 0 12px 35px rgba(15, 23, 42, 0.08);
 }
 
@@ -123,9 +118,6 @@ body.light-mode .nav-link:hover {
 }
 
 
-/* =========================================================
-   HERO
-========================================================= */
 
 body.light-mode .hero-grid {
   background: transparent;
@@ -143,7 +135,6 @@ body.light-mode .orb-violet {
   background: rgba(139, 92, 246, 0.10);
 }
 
-/* Hero image outer rings */
 body.light-mode .avatar-wrap {
   box-shadow:
     0 0 0 1px rgba(15, 23, 42, 0.06),
@@ -155,18 +146,11 @@ body.light-mode .avatar-wrap::after {
   border-color: rgba(15, 23, 42, 0.12);
 }
 
-/* This removes the dark circle/border around your photo */
 body.light-mode .avatar-inner {
   border-color: #f8fafc;
   background: #ffffff;
 }
 
-
-/* =========================================================
-   TEXT COLORS
-========================================================= */
-
-/* Tailwind slate text used throughout your HTML */
 body.light-mode .text-slate-200 {
   color: #1e293b !important;
 }
@@ -196,10 +180,6 @@ body.light-mode .text-white {
 }
 
 
-/* =========================================================
-   HEADINGS / SECTION TEXT
-========================================================= */
-
 body.light-mode h1,
 body.light-mode h2,
 body.light-mode h3,
@@ -215,10 +195,6 @@ body.light-mode .section-line {
   background: var(--gradient);
 }
 
-
-/* =========================================================
-   CARDS
-========================================================= */
 
 body.light-mode .card {
   background: rgba(255, 255, 255, 0.86);
@@ -236,10 +212,6 @@ body.light-mode .card:hover {
 }
 
 
-/* =========================================================
-   SKILLS
-========================================================= */
-
 body.light-mode .skill-box {
   color: #2563eb;
 
@@ -254,11 +226,6 @@ body.light-mode .skill-box:hover {
   border-color: rgba(37, 99, 235, 0.25);
 }
 
-
-/* =========================================================
-   TECHNOLOGY TAGS
-========================================================= */
-
 body.light-mode .tech-tag {
   color: #2563eb;
 
@@ -267,10 +234,6 @@ body.light-mode .tech-tag {
   border-color: rgba(15, 23, 42, 0.08);
 }
 
-
-/* =========================================================
-   BEYOND THE CODE
-========================================================= */
 
 body.light-mode .beyond-code-grid > div,
 body.light-mode .beyond-code-grid > a {
@@ -289,10 +252,6 @@ body.light-mode .beyond-code-grid > a:hover {
 }
 
 
-/* =========================================================
-   ICON BOXES
-========================================================= */
-
 body.light-mode .contact-icon {
   color: #2563eb;
 
@@ -301,10 +260,6 @@ body.light-mode .contact-icon {
   border-color: rgba(15, 23, 42, 0.10);
 }
 
-
-/* =========================================================
-   BUTTONS
-========================================================= */
 
 body.light-mode .btn-secondary {
   color: #334155;
@@ -322,15 +277,10 @@ body.light-mode .btn-secondary:hover {
   border-color: rgba(37, 99, 235, 0.28);
 }
 
-/* Keep primary buttons white on gradient */
 body.light-mode .btn-primary {
   color: #ffffff;
 }
 
-
-/* =========================================================
-   PROJECT SECTION
-========================================================= */
 
 body.light-mode #projects {
   background: rgba(15, 23, 42, 0.025) !important;
@@ -348,15 +298,9 @@ body.light-mode .project-number {
   border: 1px solid #000000;
 }
 
-/* Project screenshots - light mode */
 body.light-mode .project-screenshots img {
   border: 1px solid #000000;
 }
-
-
-/* =========================================================
-   CERTIFICATES
-========================================================= */
 
 body.light-mode .cert-card {
   background: #ffffff;
@@ -371,22 +315,12 @@ body.light-mode .cert-overlay {
     );
 }
 
-
-/* =========================================================
-   CONTACT SECTION
-========================================================= */
-
 body.light-mode #contact {
   background: rgba(15, 23, 42, 0.025) !important;
 
   border-top-color: rgba(15, 23, 42, 0.08) !important;
   border-bottom-color: rgba(15, 23, 42, 0.08) !important;
 }
-
-
-/* =========================================================
-   FORM FIELDS
-========================================================= */
 
 body.light-mode .field {
   color: #0f172a;
@@ -409,30 +343,15 @@ body.light-mode .field:focus {
     0 0 0 4px rgba(37, 99, 235, 0.08);
 }
 
-
-/* =========================================================
-   STATUS
-========================================================= */
-
 body.light-mode .status-dot {
   box-shadow:
     0 0 0 5px rgba(52, 211, 153, 0.10),
     0 0 22px rgba(52, 211, 153, 0.25);
 }
 
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
 body.light-mode footer {
   background: transparent;
 }
-
-
-/* =========================================================
-   THEME TOGGLE
-========================================================= */
 
 body.light-mode .theme-toggle {
   color: #334155;
@@ -449,11 +368,6 @@ body.light-mode .theme-toggle:hover {
 
   border-color: rgba(37, 99, 235, 0.28);
 }
-
-
-/* =========================================================
-   MOBILE MENU
-========================================================= */
 
 body.light-mode .mobile-menu {
   background:
@@ -479,11 +393,6 @@ body.light-mode .mobile-menu .mobile-link:hover {
   background: rgba(37, 99, 235, 0.06);
 }
 
-
-/* =========================================================
-   CERTIFICATE IMAGE MODAL
-========================================================= */
-
 body.light-mode .modal {
   background: rgba(241, 245, 249, 0.88);
 }
@@ -508,11 +417,6 @@ body.light-mode .modal-close {
 
   border-color: rgba(15, 23, 42, 0.12);
 }
-
-
-/* =========================================================
-   PROJECT DETAILS MODAL
-========================================================= */
 
 body.light-mode .project-modal {
   background: rgba(241, 245, 249, 0.88);
@@ -558,11 +462,6 @@ body.light-mode .project-overview-list {
   color: #475569;
 }
 
-
-/* =========================================================
-   GLOBAL LIGHT-MODE BORDERS
-========================================================= */
-
 body.light-mode .border-white\/10 {
   border-color: rgba(15, 23, 42, 0.10) !important;
 }
@@ -570,11 +469,6 @@ body.light-mode .border-white\/10 {
 body.light-mode .border-white\/\[\.04\] {
   border-color: rgba(15, 23, 42, 0.08) !important;
 }
-
-
-/* =========================================================
-   DARK ICON → LIGHT THEME
-========================================================= */
 
 body.light-mode .text-blue-400 {
   color: #2563eb !important;
@@ -1654,11 +1548,6 @@ transform: translateY(0);
   margin-right: 10px;
 }
 
-
-/* =========================
-   THEME TOGGLE
-========================= */
-
 .theme-toggle {
   width: 44px;
   height: 44px;
@@ -1695,14 +1584,10 @@ transform: translateY(0);
   }
 }
 
-/* Darker skill category headings in light mode */
 body.light-mode .text-blue-300 {
   color: #4d4175 !important;
 }
 
-/* =========================
-   SCROLL TO TOP
-========================= */
 
 .scroll-to-top {
   display: inline-flex;
@@ -1766,7 +1651,6 @@ body.light-mode .scroll-to-top:hover {
   color: #2563eb;
 }
 
-/* Hamburger icon in light mode */
 body.light-mode .hamburger span {
   background: #000000;
 }
@@ -1802,13 +1686,10 @@ body.light-mode .hamburger span {
   transform: translateX(3px);
 }
 
-/* Certificate titles stay white in light mode */
 body.light-mode .cert-overlay {
   color: #ffffff !important;
 }
 
-
-/* Theme shortcut tooltip */
 .theme-toggle {
   position: relative;
 }
@@ -1853,16 +1734,12 @@ body.light-mode .cert-overlay {
 
   transform: translateX(-50%) translateY(0);
 }
-/* =========================
-   FOOTER SOCIAL TOOLTIPS
-========================= */
 
 footer .contact-icon,
 .theme-toggle {
   position: relative;
 }
 
-/* Only footer social buttons get tooltips */
 footer .contact-icon::after {
   content: attr(aria-label);
 
@@ -1904,13 +1781,12 @@ footer .contact-icon:focus-visible::after {
   transform: translateX(-50%) translateY(0);
 }
 
-/* Light mode */
 body.light-mode footer .contact-icon::after {
   background: #0f172a;
   color: #ffffff;
   border-color: rgba(15, 23, 42, 0.15);
 }
-/* Hide footer tooltips on mobile */
+
 @media (max-width: 767px) {
   footer .contact-icon::after,
   .theme-toggle::after {
@@ -1918,7 +1794,7 @@ body.light-mode footer .contact-icon::after {
   }
 }
 
-/* Contact links hover */
+
 .contact-hover-text {
   transition:
     color 0.25s ease,

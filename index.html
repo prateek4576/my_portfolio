@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,7 +11,6 @@
 
     <title>Prateek Jangir | Web Developer</title>
 
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
@@ -20,63 +19,54 @@
       rel="stylesheet"
     />
 
-    <!-- Icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
 
     <link rel="icon" type="image/png" href="images/favicon.png" />
-<meta property="og:title" content="Prateek Jangir | Full-Stack Developer" />
+    <meta property="og:title" content="Prateek Jangir | Full-Stack Developer" />
 
-<meta
-  property="og:description"
-  content="Full-Stack Developer building secure, practical, and user-friendly web applications."
-/>
+    <meta
+      property="og:description"
+      content="Full-Stack Developer building secure, practical, and user-friendly web applications."
+    />
 
-<meta
-  property="og:image"
-  content="https://my-portfolio-prateek57.vercel.app/images/portfolio-preview.png"
-/>
+    <meta
+      property="og:image"
+      content="https://my-portfolio-prateek57.vercel.app/images/portfolio-preview.png"
+    />
 
-<meta
-  property="og:url"
-  content="https://my-portfolio-prateek57.vercel.app/"
-/>
+    <meta
+      property="og:url"
+      content="https://my-portfolio-prateek57.vercel.app/"
+    />
 
-<meta property="og:type" content="website" />
+    <meta property="og:type" content="website" />
 
-<meta
-  property="og:site_name"
-  content="Prateek Jangir Portfolio"
-/>
+    <meta property="og:site_name" content="Prateek Jangir Portfolio" />
 
-<meta
-  property="og:image:alt"
-  content="Prateek Jangir - Full-Stack Developer"
-/>
+    <meta
+      property="og:image:alt"
+      content="Prateek Jangir - Full-Stack Developer"
+    />
 
-<meta
-  name="twitter:card"
-  content="summary_large_image"
-/>
+    <meta name="twitter:card" content="summary_large_image" />
 
-<meta
-  name="twitter:title"
-  content="Prateek Jangir | Full-Stack Developer"
-/>
+    <meta
+      name="twitter:title"
+      content="Prateek Jangir | Full-Stack Developer"
+    />
 
-<meta
-  name="twitter:description"
-  content="Full-Stack Developer building secure, practical, and user-friendly web applications."
-/>
+    <meta
+      name="twitter:description"
+      content="Full-Stack Developer building secure, practical, and user-friendly web applications."
+    />
 
-<meta
-  name="twitter:image"
-  content="https://my-portfolio-prateek57.vercel.app/images/portfolio-preview.png"
-/>
-
-    <!-- Tailwind CDN -->
+    <meta
+      name="twitter:image"
+      content="https://my-portfolio-prateek57.vercel.app/images/portfolio-preview.png"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
 
     <script>
@@ -100,14 +90,15 @@
       };
     </script>
 
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/lenis@1.3.4/dist/lenis.css"
+    />
+    <script src="https://unpkg.com/lenis@1.3.4/dist/lenis.min.js"></script>
   </head>
 
   <body class="antialiased">
-    <!-- =========================
-         NAVIGATION
-    ========================== -->
     <header id="navbar" class="nav fixed top-0 left-0 right-0 z-50">
       <div class="max-w-7xl mx-auto px-5 sm:px-8">
         <div class="h-[76px] flex items-center justify-between">
@@ -118,7 +109,6 @@
             Prateek<span class="gradient-text">.</span>
           </a>
 
-          <!-- Desktop Navigation -->
           <nav class="hidden md:flex items-center gap-8">
             <a class="nav-link text-sm font-semibold active" href="#home">
               Home
@@ -149,7 +139,6 @@
             </a>
           </nav>
 
-          <!-- Mobile Menu Button -->
           <button
             id="mobile-menu-btn"
             aria-label="Open menu"
@@ -162,7 +151,6 @@
           </button>
         </div>
 
-        <!-- Mobile Menu -->
         <div id="mobile-menu" class="mobile-menu md:hidden">
           <div class="grid gap-1">
             <a
@@ -226,7 +214,6 @@
           <div
             class="grid lg:grid-cols-[1.08fr_.92fr] gap-14 lg:gap-8 items-center"
           >
-            <!-- Hero Text -->
             <div class="reveal">
               <p class="section-kicker mb-4">Full-Stack Developer</p>
 
@@ -269,7 +256,6 @@
               </div>
             </div>
 
-            <!-- Hero Image -->
             <div class="reveal flex justify-center lg:justify-end">
               <div class="relative">
                 <div class="avatar-wrap">
@@ -289,13 +275,8 @@
             </div>
           </div>
         </div>
-
-        
       </section>
 
-      <!-- =========================
-             ABOUT
-        ========================== -->
       <section id="about" class="py-24 lg:py-32 relative">
         <div class="max-w-7xl mx-auto px-5 sm:px-8">
           <div class="text-center reveal">
@@ -312,9 +293,7 @@
           </div>
 
           <div class="grid lg:grid-cols-[1.05fr_.95fr] gap-7 mt-14">
-            <!-- Profile -->
             <article class="card p-7 sm:p-9 reveal">
-              <!-- Get to know me -->
               <div class="flex items-center gap-3 mb-7">
                 <div class="contact-icon">
                   <i class="fa-regular fa-user"></i>
@@ -333,7 +312,6 @@
                 </div>
               </div>
 
-              <!-- About Text -->
               <div class="space-y-5 text-slate-400 leading-7">
                 <p>
                   My name is
@@ -351,7 +329,6 @@
                 </p>
               </div>
 
-              <!-- Beyond the Code -->
               <div class="mt-8 pt-6 border-t border-white/10 beyond-code">
                 <p
                   class="text-xs uppercase tracking-[.15em] font-bold text-slate-500 mb-3"
@@ -360,7 +337,6 @@
                 </p>
 
                 <div class="grid sm:grid-cols-2 gap-3 beyond-code-grid">
-                  <!-- Chess -->
                   <a
                     href="https://www.chess.com/member/prateek5757"
                     target="_blank"
@@ -372,7 +348,6 @@
                     <i class="fa-solid fa-arrow-right chess-arrow"></i>
                   </a>
 
-                  <!-- Projects -->
                   <div
                     class="rounded-xl border border-white/7 bg-white/[.025] px-4 py-3 text-sm text-slate-300"
                   >
@@ -380,7 +355,6 @@
                     Building Projects
                   </div>
 
-                  <!-- Photography -->
                   <div
                     class="rounded-xl border border-white/7 bg-white/[.025] px-4 py-3 text-sm text-slate-300"
                   >
@@ -388,7 +362,6 @@
                     Photography
                   </div>
 
-                  <!-- Music -->
                   <div
                     class="rounded-xl border border-white/7 bg-white/[.025] px-4 py-3 text-sm text-slate-300"
                   >
@@ -399,7 +372,6 @@
               </div>
             </article>
 
-            <!-- Skills -->
             <article class="card p-7 sm:p-9 reveal profile-card">
               <div class="flex items-center gap-3 mb-7">
                 <div class="contact-icon">
@@ -414,7 +386,6 @@
               </div>
 
               <div class="space-y-6">
-                <!-- Languages -->
                 <div>
                   <div
                     class="text-xs uppercase tracking-[.15em] text-blue-300 font-bold mb-3"
@@ -430,7 +401,6 @@
                   </div>
                 </div>
 
-                <!-- Frontend -->
                 <div>
                   <div
                     class="text-xs uppercase tracking-[.15em] text-blue-300 font-bold mb-3"
@@ -447,7 +417,6 @@
                   </div>
                 </div>
 
-                <!-- Backend -->
                 <div>
                   <div
                     class="text-xs uppercase tracking-[.15em] text-blue-300 font-bold mb-3"
@@ -463,7 +432,6 @@
                   </div>
                 </div>
 
-                <!-- Database -->
                 <div>
                   <div
                     class="text-xs uppercase tracking-[.15em] text-blue-300 font-bold mb-3"
@@ -478,7 +446,6 @@
                   </div>
                 </div>
 
-                <!-- Tools & Cloud -->
                 <div>
                   <div
                     class="text-xs uppercase tracking-[.15em] text-blue-300 font-bold mb-3"
@@ -501,9 +468,6 @@
         </div>
       </section>
 
-      <!-- =========================
-             PROJECTS
-        ========================== -->
       <section
         id="projects"
         class="py-24 lg:py-32 bg-white/[.018] border-y border-white/[.04]"
@@ -523,7 +487,6 @@
           </div>
 
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-14">
-            <!-- Project 1 -->
             <article
               class="card project-card reveal group"
               data-project="campusconnect"
@@ -594,7 +557,6 @@
               </div>
             </article>
 
-            <!-- Project 2 -->
             <article
               class="card project-card reveal group"
               data-project="caat"
@@ -670,7 +632,6 @@
               </div>
             </article>
 
-            <!-- Project 3 -->
             <article
               class="card project-card reveal group"
               data-project="taskflow"
@@ -747,9 +708,6 @@
         </div>
       </section>
 
-      <!-- =========================
-             CERTIFICATES
-        ========================== -->
       <section id="certificates" class="py-24 lg:py-32">
         <div class="max-w-7xl mx-auto px-5 sm:px-8">
           <div class="text-center reveal">
@@ -768,7 +726,6 @@
           <div
             class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-14"
           >
-            <!-- C++ -->
             <button
               class="cert-card aspect-square reveal group text-left"
               data-certificate="images/cpp-infosys.jpg"
@@ -789,7 +746,6 @@
               </div>
             </button>
 
-            <!-- Java -->
             <button
               class="cert-card aspect-square reveal group text-left"
               data-certificate="images/java.png"
@@ -810,7 +766,6 @@
               </div>
             </button>
 
-            <!-- DSA -->
             <button
               class="cert-card aspect-square reveal group text-left"
               data-certificate="/images/DSA.jpg"
@@ -831,7 +786,6 @@
               </div>
             </button>
 
-            <!-- DBMS -->
             <button
               class="cert-card aspect-square reveal group text-left"
               data-certificate="/images/DBMS.jpg"
@@ -852,7 +806,6 @@
               </div>
             </button>
 
-            <!-- ReactJS -->
             <button
               class="cert-card aspect-square reveal group text-left"
               data-certificate="images/reactjs.png"
@@ -873,7 +826,6 @@
               </div>
             </button>
 
-            <!-- Web Development -->
             <button
               class="cert-card aspect-square reveal group text-left"
               data-certificate="images/Web.png"
@@ -894,7 +846,6 @@
               </div>
             </button>
 
-            <!-- Linux -->
             <button
               class="cert-card aspect-square reveal group text-left"
               data-certificate="images/Linux.png"
@@ -915,7 +866,6 @@
               </div>
             </button>
 
-            <!-- CSS -->
             <button
               class="cert-card aspect-square reveal group text-left"
               data-certificate="images/css.jpg"
@@ -939,9 +889,6 @@
         </div>
       </section>
 
-      <!-- =========================
-             CONTACT
-        ========================== -->
       <section
         id="contact"
         class="py-24 lg:py-32 bg-white/[.018] border-y border-white/[.04]"
@@ -961,7 +908,6 @@
           </div>
 
           <div class="grid lg:grid-cols-[.72fr_1.28fr] gap-7 mt-14">
-            <!-- Contact Details -->
             <aside class="card p-7 sm:p-8 reveal">
               <h3 class="font-display text-2xl font-extrabold mt-2">
                 Let’s connect
@@ -984,9 +930,11 @@
                   <div>
                     <div class="text-xs text-slate-500">Email</div>
 
-                    <div class="text-sm font-semibold text-slate-200 contact-hover-text">
-  prateekjangir4576@gmail.com
-</div>
+                    <div
+                      class="text-sm font-semibold text-slate-200 contact-hover-text"
+                    >
+                      prateekjangir4576@gmail.com
+                    </div>
                   </div>
                 </a>
 
@@ -1003,9 +951,11 @@
                   <div>
                     <div class="text-xs text-slate-500">GitHub</div>
 
-                    <div class="text-sm font-semibold text-slate-200 contact-hover-text">
-  github.com/prateek4576
-</div>
+                    <div
+                      class="text-sm font-semibold text-slate-200 contact-hover-text"
+                    >
+                      github.com/prateek4576
+                    </div>
                   </div>
                 </a>
 
@@ -1022,22 +972,22 @@
                   <div>
                     <div class="text-xs text-slate-500">LinkedIn</div>
 
-                    <div class="text-sm font-semibold text-slate-200 contact-hover-text">
-  Prateek Jangir
-</div>
+                    <div
+                      class="text-sm font-semibold text-slate-200 contact-hover-text"
+                    >
+                      Prateek Jangir
+                    </div>
                   </div>
                 </a>
               </div>
 
               <div class="mt-9 pt-6 border-t border-white/10">
                 <div class="flex items-center gap-2 text-sm text-slate-400">
-                  <span class="status-dot"></span>
-                  Available for opportunities
+                  ● Open to internships & full-time opportunities
                 </div>
               </div>
             </aside>
 
-            <!-- Contact Form -->
             <div class="card p-7 sm:p-9 reveal">
               <form
                 action="https://formspree.io/f/manbvbqr"
@@ -1109,9 +1059,6 @@
         </div>
       </section>
 
-      <!-- =========================
-     PORTFOLIO CTA
-========================= -->
       <section class="py-16">
         <div class="max-w-4xl mx-auto px-5 sm:px-8">
           <div class="card p-8 sm:p-10 text-center reveal">
@@ -1136,9 +1083,6 @@
       </section>
     </main>
 
-    <!-- =========================
-         FOOTER
-    ========================== -->
     <footer class="py-10">
       <div class="max-w-7xl mx-auto px-5 sm:px-8">
         <div
@@ -1154,7 +1098,6 @@
             </p>
           </div>
 
-          <!-- Social Links -->
           <div class="flex items-center gap-2">
             <a
               href="https://github.com/prateek4576"
@@ -1194,7 +1137,6 @@
               <i class="fa-regular fa-envelope"></i>
             </a>
 
-            <!-- Theme Toggle -->
             <button
               id="theme-toggle"
               class="theme-toggle"
@@ -1206,7 +1148,6 @@
             </button>
           </div>
 
-          <!-- Scroll to Top -->
           <div class="text-center">
             <button
               id="scroll-to-top"
@@ -1228,9 +1169,6 @@
       </div>
     </footer>
 
-    <!-- =========================
-         CERTIFICATE MODAL
-    ========================== -->
     <div id="imageModal" class="modal" aria-hidden="true">
       <div
         class="modal-shell"
@@ -1250,9 +1188,6 @@
       </div>
     </div>
 
-    <!-- =========================
-     PROJECT DETAILS MODAL
-========================== -->
     <div id="projectModal" class="project-modal" aria-hidden="true">
       <div
         class="project-modal-shell"
@@ -1260,7 +1195,6 @@
         aria-modal="true"
         aria-labelledby="projectModalTitle"
       >
-        <!-- Close Button -->
         <button
           id="projectModalClose"
           class="project-modal-close"
@@ -1269,7 +1203,6 @@
           &times;
         </button>
 
-        <!-- Header -->
         <div class="project-modal-header">
           <div>
             <p id="projectModalCategory" class="section-kicker"></p>
@@ -1281,9 +1214,7 @@
           </div>
         </div>
 
-        <!-- Content -->
         <div class="project-modal-content">
-          <!-- Overview -->
           <div class="project-detail-block">
             <h3>
               <i class="fa-solid fa-circle-info"></i>
@@ -1293,7 +1224,6 @@
             <p id="projectModalOverview"></p>
           </div>
 
-          <!-- Technology -->
           <div class="project-detail-block">
             <h3>
               <i class="fa-solid fa-code"></i>
@@ -1303,7 +1233,6 @@
             <div id="projectModalTech" class="project-detail-tags"></div>
           </div>
 
-          <!-- Authentication -->
           <div class="project-detail-block">
             <h3>
               <i class="fa-solid fa-shield-halved"></i>
@@ -1313,7 +1242,6 @@
             <p id="projectModalAuth"></p>
           </div>
 
-          <!-- Screenshots -->
           <div class="project-detail-block">
             <h3>
               <i class="fa-solid fa-images"></i>
@@ -1324,7 +1252,6 @@
           </div>
         </div>
 
-        <!-- Footer Buttons -->
         <div class="project-modal-footer">
           <a
             id="projectModalGithub"
@@ -1351,7 +1278,6 @@
       </div>
     </div>
 
-    <!-- Custom JavaScript -->
     <script src="script.js"></script>
   </body>
 </html>
