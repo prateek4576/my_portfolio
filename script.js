@@ -307,8 +307,6 @@ function openProjectModal(projectId) {
 
   projectModalScreenshots.innerHTML = "";
 
-  projectModalScreenshots.innerHTML = "";
-
   project.screenshots.forEach((src) => {
     const img = document.createElement("img");
 
