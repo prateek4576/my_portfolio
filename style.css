@@ -555,16 +555,14 @@ body::before {
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.22);
 }
 
-
+.nav-link:hover {
+  color: #fff;
+}
 
 .nav-link {
   position: relative;
   color: #94a3b8;
   transition: color 0.25s ease;
-}
-
-.nav-link:hover {
-  color: #fff;
 }
 
 .nav-link::after {

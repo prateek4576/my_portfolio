@@ -235,7 +235,7 @@ const projectData = {
       "Developed a secure task management application with email/password registration and Google OAuth 2.0 authentication.",
       "Implemented Express-Session with secure cookies to maintain persistent authenticated user sessions.",
       "Used Passport.js and Passport-Local for authentication alongside hashed password validation.",
-      "Integrated PostgreSQL for SQL-based credential and user data storage with secure password hashing.",
+      "Integrated MongoDB for credential and user data storage with secure password hashing.",
     ],
 
     technology: [
@@ -244,7 +244,7 @@ const projectData = {
       "JavaScript",
       "Node.js",
       "Express.js",
-      "PostgreSQL",
+      "MongoDB",
       "OAuth 2.0",
     ],
 
