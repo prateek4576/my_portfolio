@@ -101,7 +101,7 @@
   <body class="antialiased">
     <header id="navbar" class="nav fixed top-0 left-0 right-0 z-50">
       <div class="max-w-7xl mx-auto px-5 sm:px-8">
-        <div class="h-[76px] flex items-center justify-between">
+        <div class="h-[76px] flex items-center justify-between nav-inner">
           <a
             href="#home"
             class="font-display font-extrabold text-xl sm:text-2xl tracking-tight"
@@ -109,34 +109,42 @@
             Prateek
           </a>
 
-          <nav class="hidden md:flex items-center gap-8">
-            <a class="nav-link text-sm font-semibold active" href="#home">
-              Home
-            </a>
+          <nav class="nav-desktop hidden md:flex">
+            <div class="nav-links">
+              <a class="nav-link text-sm font-semibold active" href="#home">
+                Home
+              </a>
 
-            <a class="nav-link text-sm font-semibold" href="#about"> About </a>
+              <a class="nav-link text-sm font-semibold" href="#about">
+                About
+              </a>
 
-            <a class="nav-link text-sm font-semibold" href="#projects">
-              Projects
-            </a>
+              <a class="nav-link text-sm font-semibold" href="#projects">
+                Projects
+              </a>
 
-            <a class="nav-link text-sm font-semibold" href="#certificates">
-              Certificates
-            </a>
+              <a class="nav-link text-sm font-semibold" href="#certificates">
+                Certificates
+              </a>
 
-            <a class="nav-link text-sm font-semibold" href="#education">
-              Education
-            </a>
+              <a class="nav-link text-sm font-semibold" href="#achievements">
+                Achievements
+              </a>
 
-            <a class="nav-link text-sm font-semibold" href="#contact">
-              Contact
-            </a>
+              <a class="nav-link text-sm font-semibold" href="#education">
+                Education
+              </a>
+
+              <a class="nav-link text-sm font-semibold" href="#contact">
+                Contact
+              </a>
+            </div>
 
             <a
-              href="https://drive.google.com/file/d/1iRybCAsHVI44N8-OOH4eYFRZEBBvLX8E/view?usp=sharing"
+              href="https://drive.google.com/file/d/15hYinGwkxgSHJ1LSHRvjY3STW_J5Xc5e/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
-              class="btn-primary !py-2.5 !px-5 !rounded-xl text-sm"
+              class="btn-primary nav-resume !py-2.5 !px-5 !rounded-xl text-sm"
             >
               Resume
               <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
@@ -187,6 +195,13 @@
 
             <a
               class="mobile-link rounded-xl px-4 py-3.5 text-slate-300 hover:text-white hover:bg-white/5"
+              href="#achievements"
+            >
+              Achievements
+            </a>
+
+            <a
+              class="mobile-link rounded-xl px-4 py-3.5 text-slate-300 hover:text-white hover:bg-white/5"
               href="#education"
             >
               Education
@@ -201,7 +216,7 @@
 
             <a
               class="btn-primary mt-2"
-              href="https://drive.google.com/file/d/1iRybCAsHVI44N8-OOH4eYFRZEBBvLX8E/view?usp=sharing"
+              href="https://drive.google.com/file/d/15hYinGwkxgSHJ1LSHRvjY3STW_J5Xc5e/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -520,6 +535,11 @@
                 <img src="/images/campusconnect.png" alt="CampusConnect" />
 
                 <div class="project-number">01</div>
+
+                <span class="project-view-overlay">
+                  View Details
+                  <i class="fa-solid fa-arrow-right"></i>
+                </span>
               </div>
 
               <div class="p-6 sm:p-7 flex-1 flex flex-col">
@@ -593,6 +613,11 @@
                 />
 
                 <div class="project-number">02</div>
+
+                <span class="project-view-overlay">
+                  View Details
+                  <i class="fa-solid fa-arrow-right"></i>
+                </span>
               </div>
 
               <div class="p-6 sm:p-7 flex-1 flex flex-col">
@@ -668,6 +693,11 @@
                 />
 
                 <div class="project-number">03</div>
+
+                <span class="project-view-overlay">
+                  View Details
+                  <i class="fa-solid fa-arrow-right"></i>
+                </span>
               </div>
 
               <div class="p-6 sm:p-7 flex-1 flex flex-col">
@@ -738,8 +768,7 @@
             <h2
               class="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold mt-2"
             >
-              Certificates &
-              <span class="gradient-text"> achievements </span>
+              Certificates
             </h2>
 
             <div class="section-line"></div>
@@ -764,7 +793,8 @@
               />
 
               <div class="cert-overlay">
-                <div class="font-semibold text-sm mt-1">C++</div>
+                <span class="cert-name">C++ · Infosys</span>
+                <span class="cert-year">2025</span>
               </div>
             </button>
 
@@ -784,7 +814,8 @@
               />
 
               <div class="cert-overlay">
-                <div class="font-semibold text-sm mt-1">Java</div>
+                <span class="cert-name">Java · Neo Colab</span>
+                <span class="cert-year">2026</span>
               </div>
             </button>
 
@@ -804,7 +835,8 @@
               />
 
               <div class="cert-overlay">
-                <div class="font-semibold text-sm mt-1">DSA</div>
+                <span class="cert-name">DSA · LPU</span>
+                <span class="cert-year">2026</span>
               </div>
             </button>
 
@@ -824,7 +856,8 @@
               />
 
               <div class="cert-overlay">
-                <div class="font-semibold text-sm mt-1">DBMS</div>
+                <span class="cert-name">DBMS · Infosys</span>
+                <span class="cert-year">2026</span>
               </div>
             </button>
 
@@ -844,7 +877,8 @@
               />
 
               <div class="cert-overlay">
-                <div class="font-semibold text-sm mt-1">ReactJS</div>
+                <span class="cert-name">ReactJS · Tech Veda</span>
+                <span class="cert-year">2025</span>
               </div>
             </button>
 
@@ -864,7 +898,8 @@
               />
 
               <div class="cert-overlay">
-                <div class="font-semibold text-sm mt-1">Web Development</div>
+                <span class="cert-name">Web Development · Rising Tech Pro</span>
+                <span class="cert-year">2025</span>
               </div>
             </button>
 
@@ -884,7 +919,8 @@
               />
 
               <div class="cert-overlay">
-                <div class="font-semibold text-sm mt-1">Linux</div>
+                <span class="cert-name">Linux · Skillera</span>
+                <span class="cert-year">2024</span>
               </div>
             </button>
 
@@ -904,9 +940,91 @@
               />
 
               <div class="cert-overlay">
-                <div class="font-semibold text-sm mt-1">CSS</div>
+                <span class="cert-name">CSS · HackerRank</span>
+                <span class="cert-year">2024</span>
               </div>
             </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================
+     ACHIEVEMENTS
+========================== -->
+
+      <section id="achievements" class="py-24 lg:py-32">
+        <div class="max-w-7xl mx-auto px-5 sm:px-8">
+          <!-- Heading -->
+          <div class="text-center reveal">
+            <p class="section-kicker">Achievements</p>
+
+            <h2
+              class="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold mt-2"
+            >
+              Milestones I've
+              <span class="gradient-text"> achieved </span>
+            </h2>
+
+            <div class="section-line"></div>
+          </div>
+
+          <!-- Achievement Cards -->
+          <div class="grid md:grid-cols-3 gap-6 mt-14">
+            <!-- Achievement 1 -->
+            <article class="achievement-card reveal">
+              <div class="achievement-top">
+                <div class="achievement-icon">
+                  <i class="fa-solid fa-code"></i>
+                </div>
+
+                <span class="achievement-year"> Jan 2026 – Present </span>
+              </div>
+
+              <h3 class="achievement-title">100+ Coding Problems</h3>
+
+              <p class="achievement-text">
+                Solved 100+ coding problems on LeetCode and other competitive
+                programming platforms.
+              </p>
+            </article>
+
+            <!-- Achievement 2 -->
+            <article class="achievement-card reveal">
+              <div class="achievement-top">
+                <div class="achievement-icon">
+                  <i class="fa-solid fa-calendar-check"></i>
+                </div>
+
+                <span class="achievement-year"> Mar 2026 </span>
+              </div>
+
+              <h3 class="achievement-title">50 Days Badge on LeetCode</h3>
+
+              <p class="achievement-text">
+                Earned the LeetCode 50 Days Badge in 2026 by solving problems on
+                50+ days throughout the year.
+              </p>
+            </article>
+
+            <!-- Achievement 3 -->
+            <article class="achievement-card reveal">
+              <div class="achievement-top">
+                <div class="achievement-icon">
+                  <i class="fa-solid fa-star"></i>
+                </div>
+
+                <span class="achievement-year"> Nov 2025 </span>
+              </div>
+
+              <h3 class="achievement-title">5-Star Gold Badge in C++</h3>
+
+              <p class="achievement-text">
+                Earned a 5-Star Gold Badge in C++ on HackerRank, demonstrating
+                strong programming proficiency.
+              </p>
+            </article>
+
+            
           </div>
         </div>
       </section>
@@ -1240,7 +1358,7 @@
             <!-- Right side -->
             <div class="resume-cta-action">
               <a
-                href="https://drive.google.com/file/d/1iRybCAsHVI44N8-OOH4eYFRZEBBvLX8E/view?usp=sharing"
+                href="https://drive.google.com/file/d/15hYinGwkxgSHJ1LSHRvjY3STW_J5Xc5e/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="btn-primary resume-cta-button"

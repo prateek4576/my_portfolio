@@ -307,13 +307,6 @@ body.light-mode .cert-card {
   border: 1px solid #000000;
 }
 
-body.light-mode .cert-overlay {
-  background:
-    linear-gradient(
-      transparent,
-      rgba(15, 23, 42, 0.82)
-    );
-}
 
 body.light-mode #contact {
   background: rgba(15, 23, 42, 0.025) !important;
@@ -853,11 +846,9 @@ body::before {
 }
 
 .project-image {
-  position: relative;
-  height: 218px;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
 }
-
 .project-image img {
   width: 100%;
   height: 100%;
@@ -943,40 +934,181 @@ body::before {
   transform: translateY(-2px);
 }
 
+
 .cert-card {
   position: relative;
   overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+
   border-radius: 20px;
   border: 1px solid var(--border);
+
   background: #0d1320;
+
   cursor: pointer;
   padding: 0;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-.cert-card img {
+/* Certificate hover - dark mode */
+.cert-card:hover {
+  transform: translateY(-6px);
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.30);
+}
+
+/* Certificate hover - light mode */
+/* Certificate hover - light mode */
+body.light-mode .cert-card:hover {
+  transform: translateY(-6px);
+
+  box-shadow:
+    0 20px 50px rgba(15, 23, 42, 0.14);
+}
+
+.cert-image {
+  display: block;
+
+  width: 100%;
+  aspect-ratio: 16 / 11;
+
+  object-fit: cover;
+
   transition:
     transform 0.45s ease,
     opacity 0.35s ease;
 }
 
-.cert-card:hover img {
-  transform: scale(1.04);
-  opacity: 0.78;
+.cert-card:hover .cert-image {
+  transform: scale(1.025);
+  opacity: 0.96;
 }
 
+
 .cert-overlay {
-  position: absolute;
-  inset: auto 0 0;
-  padding: 18px;
-  background: linear-gradient(transparent, rgba(7, 11, 20, 0.95));
-  transform: translateY(6px);
-  transition: 0.3s ease;
+  position: static;
+
+  width: 100%;
+  min-height: 52px;
+
+  padding: 10px 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 12px;
+
+  background: rgba(17, 24, 39, 0.92);
+
+  border-top: 1px solid rgba(255, 255, 255, 0.10);
+
+  color: #ffffff;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease;
 }
 
 .cert-card:hover .cert-overlay {
-  transform: translateY(0);
+  background: rgba(17, 24, 39, 0.98);
+  border-top-color: rgba(96, 165, 250, 0.30);
 }
 
+
+/* =========================
+   CERTIFICATE INFO STRIP
+========================= */
+
+
+
+.cert-name {
+  min-width: 0;
+
+  color: #ffffff;
+
+  font-size: 0.78rem;
+  font-weight: 800;
+  line-height: 1.2;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cert-year {
+  flex-shrink: 0;
+
+  color: #bfdbfe;
+
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+
+
+/* =========================
+   CERTIFICATE STRIP - LIGHT MODE
+========================= */
+
+body.light-mode .cert-overlay {
+  background: rgba(255, 255, 255, 0.72);
+
+ border-top-color: rgba(15, 23, 42, 0.45);
+
+  color: #0f172a;
+
+  box-shadow:
+    0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+body.light-mode .cert-name {
+  color: #1e293b;
+}
+
+body.light-mode .cert-year {
+  color: #2563eb;
+}
+
+body.light-mode .cert-card:hover .cert-overlay {
+  background: rgba(255, 255, 255, 0.88);
+
+  border-top-color: rgba(37, 99, 235, 0.22);
+
+  box-shadow:
+    0 10px 28px rgba(15, 23, 42, 0.08);
+}
+
+
+
+@media (max-width: 767px) {
+  .cert-image {
+    aspect-ratio: 16 / 11;
+  }
+
+  .cert-overlay {
+    min-height: 48px;
+    padding: 9px 11px;
+  }
+
+  .cert-name {
+    font-size: 0.72rem;
+  }
+
+  .cert-year {
+    font-size: 0.65rem;
+  }
+}
 
 .project-modal {
   position: fixed;
@@ -1386,8 +1518,20 @@ body::before {
     inset: -22px;
   }
 
+}
+
+@media (max-width: 767px) {
   .project-image {
-    height: 205px;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+  }
+
+  .project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
   }
 }
 
@@ -1406,28 +1550,106 @@ body::before {
   font-size: 0.82rem;
 }
 
-.project-card::after {
-  content: "View Details →";
+/* =========================
+   PROJECT VIEW OVERLAY
+========================= */
 
+.project-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-view-overlay {
   position: absolute;
-  right: 18px;
-  top: 18px;
-  padding: 7px 10px;
-  border-radius: 999px;
-  background: rgba(7, 11, 20, 0.78);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #bfdbfe;
-  font-size: 0.68rem;
-  font-weight: 700;
-  opacity: 1;
-transform: translateY(0);
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -45%) scale(0.94);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 12px 18px;
+
+  border-radius: 12px;
+
+  background: rgba(7, 11, 20, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+
+  color: #ffffff;
+
+  font-size: 0.82rem;
+  font-weight: 800;
+
+  white-space: nowrap;
+
+  opacity: 0;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.28);
 
   transition:
-    opacity 0.2s ease,
-    transform 0.2s ease;
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    background 0.25s ease;
+
+  z-index: 5;
+
+  pointer-events: auto;
+}
+
+.project-view-overlay i {
+  font-size: 0.78rem;
+  transition: transform 0.2s ease;
+}
+
+.project-card:hover .project-view-overlay {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.project-card:hover .project-view-overlay i {
+  transform: translateX(3px);
+}
+
+.project-view-overlay:hover {
+  background: rgba(37, 99, 235, 0.92);
+}
+
+
+.project-image::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0);
+
+  transition: background 0.25s ease;
+
   pointer-events: none;
 }
 
+.project-card:hover .project-image::after {
+  background: rgba(0, 0, 0, 0.22);
+}
+
+
+body.light-mode .project-view-overlay {
+  background: rgba(15, 23, 42, 0.82);
+  border-color: rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+}
+
+body.light-mode .project-view-overlay:hover {
+  background: rgba(37, 99, 235, 0.95);
+}
 
 
 @media (max-width: 767px) {
@@ -1684,9 +1906,6 @@ body.light-mode .hamburger span {
   transform: translateX(3px);
 }
 
-body.light-mode .cert-overlay {
-  color: #ffffff !important;
-}
 
 .theme-toggle {
   position: relative;
@@ -2271,11 +2490,227 @@ body.light-mode .resume-cta-text {
   }
 }
 
+
 /* =========================
-   CERTIFICATE CARD HEIGHT
+   ACHIEVEMENTS
 ========================= */
 
-.certificate-card {
-  aspect-ratio: 16 / 12;
-  overflow: hidden;
+.achievement-card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  min-height: 235px;
+  padding: 26px;
+
+  border-radius: 22px;
+  border: 1px solid var(--border);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(17, 24, 39, 0.70),
+      rgba(9, 15, 26, 0.66)
+    );
+
+  box-shadow:
+    0 18px 55px rgba(0, 0, 0, 0.16);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.achievement-card:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(96, 165, 250, 0.28);
+
+  box-shadow:
+    0 24px 65px rgba(0, 0, 0, 0.24);
+}
+
+.achievement-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 14px;
+}
+
+.achievement-icon {
+  width: 48px;
+  height: 48px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(37, 99, 235, 0.14),
+      rgba(124, 58, 237, 0.14)
+    );
+
+  border: 1px solid rgba(96, 165, 250, 0.22);
+
+  color: #60a5fa;
+
+  font-size: 1rem;
+}
+
+.achievement-year {
+  color: #93c5fd;
+
+  font-size: 0.68rem;
+  font-weight: 800;
+
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+
+  text-align: right;
+}
+
+.achievement-title {
+  margin-top: 24px;
+
+  color: var(--text);
+
+  font-family: Manrope, sans-serif;
+  font-size: 1.15rem;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.achievement-text {
+  margin-top: 10px;
+
+  color: var(--muted);
+
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+
+/* Achievements - Light Mode */
+
+body.light-mode .achievement-card {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.90),
+      rgba(248, 250, 252, 0.88)
+    );
+
+  border-color: rgba(15, 23, 42, 0.10);
+
+  box-shadow:
+    0 18px 55px rgba(15, 23, 42, 0.07);
+}
+
+body.light-mode .achievement-card:hover {
+  border-color: rgba(37, 99, 235, 0.22);
+
+  box-shadow:
+    0 24px 65px rgba(15, 23, 42, 0.11);
+}
+
+body.light-mode .achievement-icon {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(37, 99, 235, 0.08),
+      rgba(124, 58, 237, 0.08)
+    );
+
+  border-color: rgba(37, 99, 235, 0.16);
+
+  color: #2563eb;
+}
+
+body.light-mode .achievement-year {
+  color: #2563eb;
+}
+
+body.light-mode .achievement-title {
+  color: #0f172a;
+}
+
+body.light-mode .achievement-text {
+  color: #64748b;
+}
+
+
+
+@media (max-width: 767px) {
+  .achievement-card {
+    min-height: auto;
+    padding: 22px;
+  }
+
+  .achievement-title {
+    font-size: 1.05rem;
+  }
+
+  .achievement-text {
+    font-size: 0.86rem;
+  }
+
+  .achievement-year {
+    font-size: 0.62rem;
+  }
+}
+
+/* Certificate hover must override reveal animation */
+.cert-card.reveal.visible:hover {
+  transform: translateY(-6px);
+}
+
+
+
+/* =========================
+   DESKTOP NAVBAR LAYOUT
+========================= */
+
+@media (min-width: 768px) {
+
+  .nav-inner {
+    position: relative;
+  }
+
+  .nav-desktop {
+    position: absolute;
+    inset: 0;
+
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+
+    pointer-events: none;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    pointer-events: auto;
+  }
+
+  .nav-resume {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    height: max-content;
+    margin: auto 0;
+
+    pointer-events: auto;
+  }
+
 }
