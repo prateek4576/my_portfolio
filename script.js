@@ -435,13 +435,14 @@ document.addEventListener("keydown", (event) => {
 
 window.addEventListener("resize", () => {
   if (
-    window.innerWidth >= 768 &&
+    window.innerWidth > 1100 &&
     mobileMenu &&
     mobileMenu.classList.contains("open")
   ) {
     toggleMenu(false);
   }
 });
+
 
 projectCards.forEach((card) => {
   card.addEventListener("click", (event) => {
